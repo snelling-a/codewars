@@ -4,7 +4,9 @@ export function narcissistic(value: number) {
         value
             .toString()
             .split('')
-            .map((num) => (+num) ** value.toString().split('').length)
-            .reduce((a, b) => a + b)
+            .reduce(
+                (acc, cur, _index, power) => acc + Number(cur) ** power.length,
+                0,
+            )
     );
 }
