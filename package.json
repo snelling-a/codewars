@@ -1,5 +1,5 @@
 {
-    "name": "node-ts-project-starter",
+    "name": "codewars",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -13,7 +13,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/snelling-a/node-ts-project-starter.git"
+        "url": "git+https://github.com/snelling-a/codewars.git"
     },
     "author": {
         "name": "snelling-a",
@@ -21,9 +21,9 @@
     },
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/snelling-a/node-ts-project-starter/issues"
+        "url": "https://github.com/snelling-a/codewars/issues"
     },
-    "homepage": "https://github.com/snelling-a/node-ts-project-starter#readme",
+    "homepage": "https://github.com/snelling-a/codewars#readme",
     "devDependencies": {
         "@types/dotenv-safe": "^8.1.2",
         "@types/jest": "^27.0.3",
