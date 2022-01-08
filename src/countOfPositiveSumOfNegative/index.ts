@@ -14,5 +14,20 @@ For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should r
 */
 
 export function countPositivesSumNegatives(input: number[]): [number, number] {
-    throw new Error('The method or operation is not implemented.');
+    return input.reduce(
+        (output, current) => {
+            let [posCount, negSum] = output;
+
+            if (current > 0) {
+                posCount += 1;
+            }
+
+            if (current < 0) {
+                negSum += current;
+            }
+
+            return [posCount, negSum];
+        },
+        [0, 0],
+    );
 }
