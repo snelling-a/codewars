@@ -11,4 +11,8 @@ The returned format must be correct in order to complete this challenge.
 Don't forget the space after the closing parentheses!
 */
 
-export function createPhoneNumber(numbers: number[]): string {}
+export function createPhoneNumber(numbers: number[]): string {
+    return `(${numbers.slice(0, 3).join('')}) ${numbers
+        .slice(3, 6)
+        .join('')}-${numbers.slice(6).join('')}`;
+}
