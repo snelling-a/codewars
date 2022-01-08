@@ -6,5 +6,9 @@ You're given one parameter, the original string. You don't have to worry with st
 */
 
 export function removeChar(str: string): string {
-    // You got this!
+    const arr = str.split('');
+    arr.pop();
+    arr.shift();
+
+    return arr.join('');
 }
