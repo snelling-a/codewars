@@ -12,6 +12,15 @@ Examples:
     spinWords( "This is another test" )=> returns "This is rehtona test"
 */
 
-export function spinWords(words: string): string {
-    // TODO Have fun :)
+export function spinWords(words: string) {
+    return words
+        .split(/\s+/)
+        .reduce<string[]>((flipped, word) => {
+            if (word.length >= 5) {
+                return [...flipped, word.split('').reverse().join('')];
+            }
+
+            return [...flipped, word];
+        }, [])
+        .join(' ');
 }
