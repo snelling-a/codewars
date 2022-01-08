@@ -14,6 +14,6 @@ Note: for this kata y isn't considered a vowel.
 
 export class Disemvowel {
     static disemvowel(str: string): string {
-        return str;
+        return str.replace(/[aeiou]/gi, '');
     }
 }
