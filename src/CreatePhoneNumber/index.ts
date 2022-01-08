@@ -15,4 +15,11 @@ export function createPhoneNumber(numbers: number[]): string {
     return `(${numbers.slice(0, 3).join('')}) ${numbers
         .slice(3, 6)
         .join('')}-${numbers.slice(6).join('')}`;
+
+    // return numbers.join('').replace(/(...)(...)(.*)/, '($1) $2-$3');
+
+    // return numbers.reduce(
+    //     (p, c) => p.replace('x', String(c)),
+    //     '(xxx) xxx-xxxx',
+    // );
 }
