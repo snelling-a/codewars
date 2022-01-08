@@ -15,6 +15,6 @@ min([42, 54, 65, 87, 0]) returns 0
 You may consider that there will not be any empty arrays/vectors.
 */
 
-export const min = (list: number[]): number => {};
+export const min = (list: number[]): number => Math.min(...list);
 
-export const max = (list: number[]): number => {};
+export const max = (list: number[]): number => Math.max(...list);
