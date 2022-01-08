@@ -20,5 +20,7 @@ Output: "even"
 */
 
 export function oddOrEven(array: number[]): 'odd' | 'even' {
-    // enter code here
+    const sum = array.reduce((a, b) => a + b, 0);
+
+    return Math.abs(sum % 2) === 1 ? 'odd' : 'even';
 }

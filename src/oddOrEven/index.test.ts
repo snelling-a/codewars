@@ -39,7 +39,7 @@ describe(oddOrEven.name, () => {
         ...negativeEvenTests,
         ...oddTests,
         ...negativeOddTests,
-    ])('some of %s should be %s', (testArray, result) => {
+    ])('sum of %s should be %s', (testArray, result) => {
         expect(oddOrEven(testArray)).toEqual(result);
     });
 });
