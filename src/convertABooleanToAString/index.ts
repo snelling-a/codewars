@@ -6,6 +6,4 @@ Implement a function which convert the given boolean value into its string repre
 Note: Only valid inputs will be given.
 */
 
-export const booleanToString = (b: boolean): string => {
-    // your code here
-};
+export const booleanToString = (b: boolean): string => (b ? 'true' : 'false');
