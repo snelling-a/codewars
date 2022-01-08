@@ -19,5 +19,8 @@ The second value in the first integer array is 0, since the bus is empty in the 
 */
 
 export function numberOfPeopleOnTheBus(busStops: [number, number][]): number {
-    // Your Code
+    return busStops.reduce(
+        (final, [peopleOn, peopleOff]) => final + peopleOn - peopleOff,
+        0,
+    );
 }
