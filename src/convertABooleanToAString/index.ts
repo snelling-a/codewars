@@ -7,3 +7,5 @@ Note: Only valid inputs will be given.
 */
 
 export const booleanToString = (b: boolean): string => (b ? 'true' : 'false');
+// export const booleanToString = (b: boolean): string => String(b);
+// export const booleanToString = (b: boolean): string => `${b}`;
