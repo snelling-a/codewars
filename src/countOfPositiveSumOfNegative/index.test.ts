@@ -1,6 +1,6 @@
 import { countPositivesSumNegatives } from '.';
 
-type TestCase = [number[], [number, number]];
+type TestCase = [number[] | null, [number, number] | []];
 describe(countPositivesSumNegatives.name, () => {
     const testCases: TestCase[] = [
         [
@@ -11,6 +11,8 @@ describe(countPositivesSumNegatives.name, () => {
             [0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14],
             [8, -50],
         ],
+        [null, []],
+        [[], []],
     ];
 
     it.each(testCases)(
