@@ -15,3 +15,15 @@ export type Developer = {
         | 'Python'
         | 'Ruby';
 };
+
+export type LanguageCounts = {
+    Clojure?: number;
+    C?: number;
+    CSS?: number;
+    HTML?: number;
+    Java?: number;
+    JavaScript?: number;
+    PHP?: number;
+    Python?: number;
+    Ruby?: number;
+};
