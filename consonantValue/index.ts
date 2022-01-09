@@ -19,5 +19,15 @@ More examples in test cases. Good luck!
 */
 
 export function consonantValue(s: string) {
-    // your code here
+    const split = s.split(/[aeiou]/g);
+
+    const totals = split.reduce<number[]>((totalsAcc, totalsCur) => {
+        const currentVal = totalsCur
+            .split('')
+            .reduce((acc, cur) => acc + cur.charCodeAt(0) - 96, 0);
+
+        return [...totalsAcc, currentVal];
+    }, []);
+
+    return Math.max(...totals);
 }
