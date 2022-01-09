@@ -1,4 +1,5 @@
 import { getFirstPython } from '.';
+import { fullList } from '../fullList';
 import { Developer } from '../types';
 
 type TestCase = [Developer[], string];
@@ -56,7 +57,45 @@ describe(getFirstPython.name, () => {
         'There will be no Python developers',
     ];
 
-    it.each([testCase1, testCase2])(
+    const testCase3: TestCase = [
+        [
+            {
+                firstName: 'Sofia',
+                lastName: 'P.',
+                country: 'Italy',
+                continent: 'Europe',
+                age: 41,
+                language: 'Clojure',
+            },
+            {
+                firstName: 'Jayden',
+                lastName: 'P.',
+                country: 'Jamaica',
+                continent: 'Americas',
+                age: 42,
+                language: 'JavaScript',
+            },
+            {
+                firstName: 'Sou',
+                lastName: 'B.',
+                country: 'Japan',
+                continent: 'Asia',
+                age: 43,
+                language: 'Python',
+            },
+            {
+                firstName: 'Rimas',
+                lastName: 'C.',
+                country: 'Jordan',
+                continent: 'Asia',
+                age: 44,
+                language: 'Java',
+            },
+        ],
+        'Sou, Japan',
+    ];
+
+    it.each([testCase1, testCase2, testCase3, [fullList, 'Noel, Albania']])(
         'should return the first Python developer to sign up for the meetup',
         (developers, first) =>
             expect(getFirstPython(developers)).toEqual(first),
