@@ -8,4 +8,9 @@ Given a string, detect whether or not it is a pangram. Return True if it is, Fal
 Ignore numbers and punctuation.
 */
 
-export const isPangram = (phrase: string): boolean => true;
+export const isPangram = (phrase: string): boolean => {
+    // source: https://stackoverflow.com/a/65398199
+    const regex = /(?:(?=(.*?([a-z]))(?!.*\2))\1){26}/i;
+
+    return regex.test(phrase);
+};
