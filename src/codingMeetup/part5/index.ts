@@ -23,8 +23,16 @@ Notes:
     The input array will always be valid and formatted as in the example above.
 */
 
-import { Developer } from '../types';
+import { Developer, LanguageCounts } from '../types';
 
 export function countLanguages(list: Developer[]) {
-    // thank you for checking out the Coding Meetup kata :)
+    return list.reduce<LanguageCounts>((languages, developer) => {
+        const devLang = languages[developer.language];
+
+        if (devLang) {
+            return { ...languages, [developer.language]: devLang + 1 };
+        }
+
+        return { ...languages, [developer.language]: 1 };
+    }, {});
 }

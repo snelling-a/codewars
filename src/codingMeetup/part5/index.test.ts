@@ -1,10 +1,7 @@
 import { countLanguages } from '.';
-import { Developer } from '../types';
+import { Developer, LanguageCounts } from '../types';
 
-type TestCase = [
-    Developer[],
-    { C?: number; JavaScript?: number; Ruby?: number },
-];
+type TestCase = [Developer[], LanguageCounts];
 
 describe(countLanguages.name, () => {
     const testCase1: TestCase = [
@@ -46,6 +43,6 @@ describe(countLanguages.name, () => {
     ];
 
     it.each([testCase1])('should count the languages', (devList, langCount) =>
-        expect(countLanguages(devList)).toBe(langCount),
+        expect(countLanguages(devList)).toEqual(langCount),
     );
 });
