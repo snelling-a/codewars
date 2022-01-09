@@ -1,4 +1,5 @@
 import { countDevelopers, Developer } from '.';
+import { fullList } from './fullList';
 
 type TestCase = [Developer[], number];
 
@@ -63,8 +64,9 @@ describe(countDevelopers.name, () => {
         0,
     ];
 
-    it.each<TestCase>([testCase1, testCase2])(
+    it.each<TestCase>([testCase1, testCase2, [fullList, 8]])(
         'should count the number of JS developers form Europe',
-        (test, totalDevs) => expect(countDevelopers(test)).toEqual(totalDevs),
+        (test, jsDevsFromEurope) =>
+            expect(countDevelopers(test)).toEqual(jsDevsFromEurope),
     );
 });
