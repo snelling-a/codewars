@@ -1,4 +1,5 @@
 import { countLanguages } from '.';
+import { fullList } from '../fullList';
 import { Developer, LanguageCounts } from '../types';
 
 type TestCase = [Developer[], LanguageCounts];
@@ -42,7 +43,22 @@ describe(countLanguages.name, () => {
         { C: 2, JavaScript: 1, Ruby: 1 },
     ];
 
-    it.each([testCase1])('should count the languages', (devList, langCount) =>
-        expect(countLanguages(devList)).toEqual(langCount),
+    const testCase2: TestCase = [
+        fullList,
+        {
+            C: 10,
+            Clojure: 8,
+            Java: 16,
+            JavaScript: 14,
+            PHP: 9,
+            Python: 20,
+            Ruby: 20,
+        },
+    ];
+
+    it.each([testCase1, testCase2])(
+        'should count the languages',
+        (devList, langCount) =>
+            expect(countLanguages(devList)).toEqual(langCount),
     );
 });
