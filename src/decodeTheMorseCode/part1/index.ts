@@ -32,5 +32,14 @@ All the test strings would contain valid Morse code, so you may skip checking fo
 import { MORSE_CODE } from '../morseCodeDIctionary';
 
 export function decodeMorse(morseCode: string): string {
-    // your code here
+    return morseCode
+        .trim()
+        .split('   ')
+        .map((word) =>
+            word
+                .split(' ')
+                .map((letter) => MORSE_CODE[letter])
+                .join(''),
+        )
+        .join(' ');
 }
