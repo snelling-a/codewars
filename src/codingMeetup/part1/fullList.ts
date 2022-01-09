@@ -1,4 +1,4 @@
-import { Developer } from '.';
+import { Developer } from '../types';
 
 export const fullList: Developer[] = [
     {

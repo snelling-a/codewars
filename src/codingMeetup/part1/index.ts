@@ -25,23 +25,7 @@ The format of the strings will always be Europe and JavaScript.
 All data will always be valid and uniform as in the example above.
 */
 
-export type Developer = {
-    firstName: string;
-    lastName: string;
-    country: string;
-    continent: 'Africa' | 'Americas' | 'Asia' | 'Europe' | 'Oceania';
-    age: number;
-    language:
-        | 'Clojure'
-        | 'C'
-        | 'CSS'
-        | 'HTML'
-        | 'Java'
-        | 'JavaScript'
-        | 'PHP'
-        | 'Python'
-        | 'Ruby';
-};
+import { Developer } from '../types';
 
 export function countDevelopers(list: Developer[]) {
     return list.reduce(
