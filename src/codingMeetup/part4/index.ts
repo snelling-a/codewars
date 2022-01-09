@@ -25,5 +25,9 @@ The input array will always be valid and formatted as in the example above.
 import { Developer } from '../types';
 
 export function getFirstPython(list: Developer[]) {
-    // Thank you for checking out my kata :)
+    const first = list.find((developer) => developer.language === 'Python');
+
+    return first
+        ? `${first.firstName}, ${first.country}`
+        : 'There will be no Python developers';
 }
