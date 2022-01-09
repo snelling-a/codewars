@@ -1,4 +1,5 @@
-import { countDevelopers, Developer } from '.';
+import { countDevelopers } from '.';
+import { Developer } from '../types';
 import { fullList } from './fullList';
 
 type TestCase = [Developer[], number];
