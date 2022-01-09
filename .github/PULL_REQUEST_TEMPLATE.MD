@@ -5,6 +5,7 @@
 ## Checklist
 - [ ] url and description in `index` file (see below)
 - [ ] tested
+- [ ] PR labeled with difficulty
 
 
 #### Example
