@@ -35,5 +35,12 @@ export type Developer = {
 };
 
 export function countDevelopers(list: Developer[]) {
-    // your awesome code here :)
+    return list.reduce(
+        (sum, developer) =>
+            developer.language === 'JavaScript' &&
+            developer.continent === 'Europe'
+                ? sum + 1
+                : sum,
+        0,
+    );
 }
