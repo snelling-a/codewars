@@ -27,3 +27,5 @@ export type LanguageCounts = {
     Python?: number;
     Ruby?: number;
 };
+
+export type TestCaseBoolean = [Developer[], boolean];

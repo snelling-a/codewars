@@ -1,10 +1,9 @@
 import { isRubyComing } from '.';
 import { fullList } from '../fullList';
-import { Developer } from '../types';
+import { TestCaseBoolean } from '../types';
 
-type TestCase = [Developer[], boolean];
 describe(isRubyComing.name, () => {
-    const testCase1: TestCase = [
+    const testCase1: TestCaseBoolean = [
         [
             {
                 firstName: 'Sofia',
@@ -34,7 +33,7 @@ describe(isRubyComing.name, () => {
         true,
     ];
 
-    const testCase2: TestCase = [
+    const testCase2: TestCaseBoolean = [
         [
             {
                 firstName: 'Sofia',
@@ -56,7 +55,7 @@ describe(isRubyComing.name, () => {
         false,
     ];
 
-    const testCase3: TestCase = [
+    const testCase3: TestCaseBoolean = [
         [
             {
                 firstName: 'Emma',
@@ -86,7 +85,7 @@ describe(isRubyComing.name, () => {
         true,
     ];
 
-    const testCase4: TestCase = [
+    const testCase4: TestCaseBoolean = [
         [
             {
                 firstName: 'Kseniya',
@@ -124,7 +123,7 @@ describe(isRubyComing.name, () => {
         true,
     ];
 
-    const testCase5: TestCase = [
+    const testCase5: TestCaseBoolean = [
         [
             {
                 firstName: 'Sofia',
