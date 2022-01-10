@@ -26,8 +26,13 @@ Notes:
 
  */
 
+import { CONTINENTS } from '../constants';
 import { Developer } from '../types';
 
 export function allContinents(list: Developer[]) {
-    // thank you for checking out the Coding Meetup kata :)
+    return (
+        CONTINENTS.filter((continent) =>
+            list.map((dev) => dev.continent).includes(continent),
+        ).length === CONTINENTS.length
+    );
 }
