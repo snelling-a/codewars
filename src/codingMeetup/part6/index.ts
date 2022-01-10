@@ -1,5 +1,5 @@
 /*
-Coding Meetup #6 - Higher-Order Functions Series - Can they code in the same language?
+https://www.codewars.com/kata/coding-meetup-number-6-higher-order-functions-series-can-they-code-in-the-same-language
 
 You will be given an array of objects representing data about developers who have signed up to attend the next coding
 meetup that you are organising.
