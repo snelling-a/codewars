@@ -35,9 +35,16 @@ Age is represented by a number which can be any positive integer up to 199.
 import { Developer } from '../types';
 
 export function isAgeDiverse(list: Developer[]) {
-    const ageGroups = [
-        ...new Set(list.map(({ age }) => Math.floor(age / 10) * 10)),
-    ];
+    const ageGroups = new Set(
+        list.map(({ age }) => {
+            if (age >= 100) {
+                return 100;
+            }
+            return Math.floor(age / 10) * 10;
+        }),
+    );
 
-    return ageGroups.length === 10;
+    ageGroups.delete(0);
+
+    return ageGroups.size === 10;
 }
