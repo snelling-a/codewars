@@ -27,5 +27,9 @@ Notes:
 import { Developer } from '../types';
 
 export function findSenior(list: Developer[]) {
-    // thank you for checking out the Coding Meetup kata :)
+    return list.reduce<Developer[]>(
+        (a, b) =>
+            b.age === Math.max(...list.map((d) => d.age)) ? [...a, b] : a,
+        [],
+    );
 }
