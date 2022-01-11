@@ -16,6 +16,7 @@ export type Developer = {
         | 'PHP'
         | 'Python'
         | 'Ruby';
+    githubAdmin?: 'yes' | 'no';
 };
 
 export type LanguageCounts = {
