@@ -1,4 +1,5 @@
 import { isLanguageDiverse } from '.';
+import { fullList } from '../fullList';
 import { TestCaseBoolean } from '../types';
 
 describe(isLanguageDiverse.name, () => {
@@ -169,7 +170,10 @@ describe(isLanguageDiverse.name, () => {
         ],
         true,
     ];
-    it.each([testCase1, testCase2, testCase3, testCase4])(
+
+    const fullListTest: TestCaseBoolean = [fullList, true];
+
+    it.each([testCase1, testCase2, testCase3, testCase4, fullListTest])(
         'should return true if the number of any of the languages is at 2x more than the other',
         (developers, isDiverse) =>
             expect(isLanguageDiverse(developers)).toEqual(isDiverse),
