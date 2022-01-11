@@ -31,7 +31,7 @@ describe(addUsername.name, () => {
                 continent: 'Europe',
                 age: 30,
                 language: 'Ruby',
-                username: 'emilyn1990',
+                username: 'emilyn1992',
             },
             {
                 firstName: 'Nor',
@@ -40,7 +40,7 @@ describe(addUsername.name, () => {
                 continent: 'Asia',
                 age: 20,
                 language: 'Clojure',
-                username: 'nore2000',
+                username: 'nore2002',
             },
         ],
     ];

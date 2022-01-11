@@ -33,5 +33,10 @@ Notes:
 import { Developer } from '../types';
 
 export function addUsername(list: Developer[]) {
-    // thank you for checking out the Coding Meetup kata :)
+    return list.map((developer) => ({
+        ...developer,
+        username: `${developer.firstName.toLowerCase()}${developer.lastName[0].toLowerCase()}${
+            new Date().getFullYear() - developer.age
+        }`,
+    }));
 }
