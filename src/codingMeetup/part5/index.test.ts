@@ -49,10 +49,10 @@ describe(countLanguages.name, () => {
             C: 10,
             Clojure: 8,
             Java: 16,
-            JavaScript: 14,
-            PHP: 9,
+            JavaScript: 15,
+            PHP: 8,
             Python: 20,
-            Ruby: 20,
+            Ruby: 19,
         },
     ];
 

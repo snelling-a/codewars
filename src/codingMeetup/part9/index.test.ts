@@ -1,4 +1,5 @@
 import { isAgeDiverse } from '.';
+import { fullList } from '../fullList';
 import { TestCaseBoolean } from '../types';
 
 describe(isAgeDiverse.name, () => {
@@ -148,7 +149,9 @@ describe(isAgeDiverse.name, () => {
         false,
     ];
 
-    it.each([testCase1, testCase2, testCase3])(
+    const fullListTest: TestCaseBoolean = [fullList, true];
+
+    it.each([testCase1, testCase2, testCase3, fullListTest])(
         'should return true if all age groups are represented',
         (developers, allAgesRepresented) =>
             expect(isAgeDiverse(developers)).toEqual(allAgesRepresented),
