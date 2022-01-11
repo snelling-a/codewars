@@ -16,4 +16,14 @@ Note: you will always receive a valid array containing a random assortment of di
 */
 
 export function isValidWalk(walk: string[]) {
+    if (walk.length !== 10) {
+        return false;
+    }
+
+    const n = walk.filter((x) => x === 'n').length;
+    const s = walk.filter((x) => x === 's').length;
+    const e = walk.filter((x) => x === 'e').length;
+    const w = walk.filter((x) => x === 'w').length;
+
+    return n === s && e === w;
 }
