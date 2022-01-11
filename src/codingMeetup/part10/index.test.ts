@@ -44,8 +44,9 @@ describe(addUsername.name, () => {
             },
         ],
     ];
-
     it.each([testCase1])('should add correct username', (input, expected) => {
+        jest.useFakeTimers().setSystemTime(new Date('2022-01-11').getTime());
+
         expect(addUsername(input)).toEqual(expected);
     });
 });
