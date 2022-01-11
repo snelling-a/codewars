@@ -31,13 +31,11 @@ Notes:
 import { Developer } from '../types';
 
 export function isLanguageDiverse(list: Developer[]) {
-    const jsCount = list.filter(
-        ({ language }) => language === 'JavaScript',
-    ).length;
-    const pyCount = list.filter(({ language }) => language === 'Python').length;
-    const rubyCount = list.filter(({ language }) => language === 'Ruby').length;
-
-    const langCounts = [jsCount, pyCount, rubyCount];
+    const langCounts = [
+        list.filter(({ language }) => language === 'JavaScript').length,
+        list.filter(({ language }) => language === 'Python').length,
+        list.filter(({ language }) => language === 'Ruby').length,
+    ];
 
     return Math.max(...langCounts) / Math.min(...langCounts) <= 2;
 }
