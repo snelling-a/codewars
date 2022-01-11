@@ -15,5 +15,12 @@ Examples
 */
 
 export function order(words: string) {
-    // ...
+    const matcher = /\d+/;
+    return words
+        .split(' ')
+        .sort(
+            (a, b) =>
+                Number(a.match(matcher) || []) - Number(b.match(matcher) || []),
+        )
+        .join(' ');
 }
