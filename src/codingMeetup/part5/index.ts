@@ -26,13 +26,13 @@ Notes:
 import { Developer, LanguageCounts } from '../types';
 
 export function countLanguages(list: Developer[]) {
-    return list.reduce<LanguageCounts>((languages, developer) => {
-        const devLang = languages[developer.language];
+    return list.reduce<LanguageCounts>((languages, { language }) => {
+        const devLang = languages[language];
 
         if (devLang) {
-            return { ...languages, [developer.language]: devLang + 1 };
+            return { ...languages, [language]: devLang + 1 };
         }
 
-        return { ...languages, [developer.language]: 1 };
+        return { ...languages, [language]: 1 };
     }, {});
 }
