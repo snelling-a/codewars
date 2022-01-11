@@ -440,28 +440,12 @@ describe(findSenior.name, () => {
         fullList,
         [
             {
-                age: 89,
+                firstName: 'Luke',
+                lastName: 'V.',
+                country: 'Malta',
                 continent: 'Europe',
-                country: 'Austria',
-                firstName: 'Lukas',
-                language: 'C',
-                lastName: 'R.',
-            },
-            {
-                age: 89,
-                continent: 'Africa',
-                country: 'Egypt',
-                firstName: 'Mariam',
-                language: 'Python',
-                lastName: 'B.',
-            },
-            {
-                age: 89,
-                continent: 'Europe',
-                country: 'Russia',
-                firstName: 'Alexander',
-                language: 'Java',
-                lastName: 'F.',
+                age: 129,
+                language: 'PHP',
             },
         ],
     ];
