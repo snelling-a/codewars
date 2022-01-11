@@ -21,4 +21,7 @@ Notes:
 import { Developer } from '../types';
 
 export function getAverageAge(list: Developer[]) {
+    return Math.round(
+        list.reduce((acc, { age }) => acc + age, 0) / list.length,
+    );
 }
