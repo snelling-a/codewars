@@ -35,4 +35,9 @@ export function findAdmin(list: Developer[], lang: string) {
         }
         return admins;
     }, []);
+
+    // return list.filter(
+    //     ({ language, githubAdmin }) =>
+    //         language === lang && githubAdmin === 'yes',
+    // );
 }
