@@ -31,5 +31,13 @@ Notes:
 import { Developer } from '../types';
 
 export function isLanguageDiverse(list: Developer[]) {
-    // thank you for checking out the Coding Meetup kata :)
+    const jsCount = list.filter(
+        ({ language }) => language === 'JavaScript',
+    ).length;
+    const pyCount = list.filter(({ language }) => language === 'Python').length;
+    const rubyCount = list.filter(({ language }) => language === 'Ruby').length;
+
+    const langCounts = [jsCount, pyCount, rubyCount];
+
+    return Math.max(...langCounts) / Math.min(...langCounts) <= 2;
 }
