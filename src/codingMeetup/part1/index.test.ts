@@ -65,7 +65,7 @@ describe(countDevelopers.name, () => {
         0,
     ];
 
-    it.each<TestCase>([testCase1, testCase2, [fullList, 8]])(
+    it.each<TestCase>([testCase1, testCase2, [fullList, 9]])(
         'should count the number of JS developers form Europe',
         (test, jsDevsFromEurope) =>
             expect(countDevelopers(test)).toEqual(jsDevsFromEurope),
