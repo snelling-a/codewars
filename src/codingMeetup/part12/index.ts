@@ -29,5 +29,10 @@ Notes:
 import { Developer } from '../types';
 
 export function findAdmin(list: Developer[], lang: string) {
-    // thank you for checking out the Coding Meetup kata :)
+    return list.reduce<Developer[]>((admins, developer) => {
+        if (developer.language === lang && developer.githubAdmin === 'yes') {
+            return [...admins, developer];
+        }
+        return admins;
+    }, []);
 }
