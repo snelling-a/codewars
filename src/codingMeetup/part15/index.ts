@@ -29,5 +29,18 @@ Notes:
 import { Developer } from '../types';
 
 export function findOddNames(list: Developer[]) {
-    // thank you for checking out the Coding Meetup kata :)
+    return list.reduce<Developer[]>((odds, developer) => {
+        const first = developer.firstName
+            .split('')
+            .reduce(
+                (firstTotal, letter) => firstTotal + letter.charCodeAt(0),
+                0,
+            );
+
+        if (first % 2 !== 0) {
+            return [...odds, developer];
+        }
+
+        return odds;
+    }, []);
 }
