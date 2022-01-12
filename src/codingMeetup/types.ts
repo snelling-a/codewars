@@ -8,6 +8,12 @@ export type Developer = {
     age: number;
     language: typeof LANGUAGE_LIST[number];
     githubAdmin?: 'yes' | 'no';
+    meal?:
+        | 'standard'
+        | 'vegetarian'
+        | 'vegan'
+        | 'diabetic'
+        | 'gluten-intolerant';
 };
 
 export type LanguageCounts = {
