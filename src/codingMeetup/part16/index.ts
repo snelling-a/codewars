@@ -34,5 +34,20 @@ Notes:
 import { Developer } from '../types';
 
 export function askForMissingDetails(list: Developer[]) {
-    // thank you for checking out the Coding Meetup kata :)
+    return list
+        .map((developer) => {
+            const missing = Object.keys(developer).find(
+                (key) => developer[key as keyof typeof developer] === null,
+            );
+
+            if (missing) {
+                return {
+                    ...developer,
+                    question: `Hi, could you please provide your ${missing}.`,
+                };
+            }
+
+            return null;
+        })
+        .filter(Boolean);
 }
