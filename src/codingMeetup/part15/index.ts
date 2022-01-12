@@ -43,4 +43,17 @@ export function findOddNames(list: Developer[]) {
 
         return odds;
     }, []);
+
+    // return list.filter(
+    //     ({ firstName }) =>
+    //         firstName
+    //             .split('')
+    //             .reduce(
+    //                 (total, currentLetter) =>
+    //                     currentLetter.charCodeAt(0) + total,
+    //                 0,
+    //             ) %
+    //             2 !==
+    //         0,
+    // );
 }
