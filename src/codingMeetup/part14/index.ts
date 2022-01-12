@@ -29,8 +29,13 @@ Notes:
     in the same way, as follows: 'standard', 'vegetarian', 'vegan', 'diabetic', 'gluten-intolerant'.
 */
 
-import { Developer } from '../types';
+import { Developer, FoodOptions } from '../types';
 
 export function orderFood(list: Developer[]) {
-    // thank you for checking out the Coding Meetup kata :)
+    return list.reduce<FoodOptions>((acc, { meal }) => {
+        if (meal) {
+            acc[meal] = (acc[meal] || 0) + 1;
+        }
+        return acc;
+    }, {});
 }

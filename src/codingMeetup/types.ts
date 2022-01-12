@@ -9,11 +9,19 @@ export type Developer = {
     language: typeof LANGUAGE_LIST[number];
     githubAdmin?: 'yes' | 'no';
     meal?:
-        | 'standard'
-        | 'vegetarian'
-        | 'vegan'
         | 'diabetic'
-        | 'gluten-intolerant';
+        | 'gluten-intolerant'
+        | 'standard'
+        | 'vegan'
+        | 'vegetarian';
+};
+
+export type FoodOptions = {
+    diabetic?: number;
+    'gluten-intolerant'?: number;
+    standard?: number;
+    vegan?: number;
+    vegetarian?: number;
 };
 
 export type LanguageCounts = {

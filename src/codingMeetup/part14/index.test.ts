@@ -1,16 +1,8 @@
 import { orderFood } from '.';
-import { Developer } from '../types';
+import { Developer, FoodOptions } from '../types';
 
-type TestCase = [
-    Developer[],
-    {
-        standard?: number;
-        vegetarian?: number;
-        vegan?: number;
-        diabetic?: number;
-        'gluten-intolerant'?: number;
-    },
-];
+type TestCase = [Developer[], FoodOptions];
+
 describe(orderFood.name, () => {
     const testCase1: TestCase = [
         [
