@@ -1,10 +1,8 @@
 import { addUsername } from '.';
-import { Developer } from '../types';
-
-type TestCase = [Developer[], Developer[]];
+import { TestCaseDeveloper } from '../types';
 
 describe(addUsername.name, () => {
-    const testCase1: TestCase = [
+    const testCase1: TestCaseDeveloper = [
         [
             {
                 firstName: 'Emily',
@@ -45,7 +43,7 @@ describe(addUsername.name, () => {
         ],
     ];
 
-    const testCaseNull: TestCase = [
+    const testCaseNull: TestCaseDeveloper = [
         [
             {
                 firstName: null,
@@ -102,6 +100,7 @@ describe(addUsername.name, () => {
             },
         ],
     ];
+
     it.each([testCase1, testCaseNull])(
         'should add correct username',
         (input, expected) => {

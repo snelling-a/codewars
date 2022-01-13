@@ -1,11 +1,9 @@
 import { getAverageAge } from '.';
 import { fullList } from '../fullList';
-import { Developer } from '../types';
-
-type TestCase = [Developer[], number];
+import { TestCaseNumber } from '../types';
 
 describe(getAverageAge.name, () => {
-    const testCases: TestCase[] = [
+    const testCases: TestCaseNumber[] = [
         [
             [
                 {
@@ -50,7 +48,7 @@ describe(getAverageAge.name, () => {
         ],
     ];
 
-    const onePersonTest: TestCase = [
+    const onePersonTest: TestCaseNumber = [
         [
             {
                 firstName: 'Harry',
@@ -64,7 +62,7 @@ describe(getAverageAge.name, () => {
         19,
     ];
 
-    const testCase1: TestCase = [
+    const testCase1: TestCaseNumber = [
         [
             {
                 firstName: 'Kseniya',
@@ -86,7 +84,7 @@ describe(getAverageAge.name, () => {
         31,
     ];
 
-    const testCase2: TestCase = [
+    const testCase2: TestCaseNumber = [
         [
             {
                 firstName: 'Sofia',
@@ -172,9 +170,9 @@ describe(getAverageAge.name, () => {
         66,
     ];
 
-    const fullListTestCase: TestCase = [fullList, 44];
+    const fullListTestCase: TestCaseNumber = [fullList, 44];
 
-    const testCasesNull: TestCase[] = [
+    const testCasesNull: TestCaseNumber[] = [
         [
             [
                 {
@@ -210,6 +208,7 @@ describe(getAverageAge.name, () => {
             15,
         ],
     ];
+
     it.each([
         ...testCases,
         onePersonTest,

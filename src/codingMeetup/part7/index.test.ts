@@ -1,11 +1,9 @@
 import { findSenior } from '.';
 import { fullList } from '../fullList';
-import { Developer } from '../types';
-
-type TestCase = [Developer[], Developer[]];
+import { TestCaseDeveloper } from '../types';
 
 describe(findSenior.name, () => {
-    const testCase1: TestCase = [
+    const testCase1: TestCaseDeveloper = [
         [
             {
                 firstName: 'Gabriel',
@@ -60,7 +58,7 @@ describe(findSenior.name, () => {
         ],
     ];
 
-    const testCase2: TestCase = [
+    const testCase2: TestCaseDeveloper = [
         [
             {
                 firstName: 'Gabriel',
@@ -98,7 +96,7 @@ describe(findSenior.name, () => {
             },
         ],
     ];
-    const testCase3: TestCase = [
+    const testCase3: TestCaseDeveloper = [
         [
             {
                 firstName: 'Alexander',
@@ -193,7 +191,7 @@ describe(findSenior.name, () => {
         ],
     ];
 
-    const testCase4: TestCase = [
+    const testCase4: TestCaseDeveloper = [
         [
             {
                 firstName: 'Mark',
@@ -232,7 +230,7 @@ describe(findSenior.name, () => {
         ],
     ];
 
-    const testCase5: TestCase = [
+    const testCase5: TestCaseDeveloper = [
         [
             {
                 firstName: 'Kseniya',
@@ -263,7 +261,7 @@ describe(findSenior.name, () => {
         ],
     ];
 
-    const testCase6: TestCase = [
+    const testCase6: TestCaseDeveloper = [
         [
             {
                 firstName: 'Sofia',
@@ -310,7 +308,7 @@ describe(findSenior.name, () => {
         ],
     ];
 
-    const testCase7: TestCase = [
+    const testCase7: TestCaseDeveloper = [
         [
             {
                 firstName: 'Alexander',
@@ -405,7 +403,7 @@ describe(findSenior.name, () => {
         ],
     ];
 
-    const testCase8: TestCase = [
+    const testCase8: TestCaseDeveloper = [
         [
             {
                 firstName: 'Mehdi',
@@ -436,7 +434,7 @@ describe(findSenior.name, () => {
         ],
     ];
 
-    const fullListTest: TestCase = [
+    const fullListTest: TestCaseDeveloper = [
         fullList,
         [
             {
@@ -450,7 +448,7 @@ describe(findSenior.name, () => {
         ],
     ];
 
-    const nullTestCases: TestCase[] = [
+    const nullTestCases: TestCaseDeveloper[] = [
         [
             [
                 {

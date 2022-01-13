@@ -1,10 +1,9 @@
 import { findOddNames } from '.';
 import { fullList } from '../fullList';
-import { Developer } from '../types';
+import { TestCaseDeveloper } from '../types';
 
-type TestCase = [Developer[], Developer[]];
 describe(findOddNames.name, () => {
-    const testCase1: TestCase = [
+    const testCase1: TestCaseDeveloper = [
         [
             {
                 firstName: 'Aba',
@@ -35,7 +34,7 @@ describe(findOddNames.name, () => {
         ],
     ];
 
-    const testCase2: TestCase = [
+    const testCase2: TestCaseDeveloper = [
         [
             {
                 firstName: 'Aba',
@@ -49,7 +48,7 @@ describe(findOddNames.name, () => {
         [],
     ];
 
-    const testCase3: TestCase = [
+    const testCase3: TestCaseDeveloper = [
         [
             {
                 firstName: 'Harry',
@@ -63,7 +62,7 @@ describe(findOddNames.name, () => {
         [],
     ];
 
-    const testCase4: TestCase = [
+    const testCase4: TestCaseDeveloper = [
         [
             {
                 firstName: 'Kseniya',
@@ -94,7 +93,7 @@ describe(findOddNames.name, () => {
         ],
     ];
 
-    const testCase5: TestCase = [
+    const testCase5: TestCaseDeveloper = [
         [
             {
                 firstName: 'Sofia',
@@ -205,7 +204,7 @@ describe(findOddNames.name, () => {
         ],
     ];
 
-    const fullListTestCase: TestCase = [
+    const fullListTestCase: TestCaseDeveloper = [
         fullList,
         [
             {
@@ -515,7 +514,7 @@ describe(findOddNames.name, () => {
         ],
     ];
 
-    const testCaseNull: TestCase = [
+    const testCaseNull: TestCaseDeveloper = [
         [
             {
                 firstName: null,

@@ -49,3 +49,5 @@ export type LanguageCounts = {
 };
 
 export type TestCaseBoolean = [Developer[], boolean];
+export type TestCaseNumber = [Developer[], number];
+export type TestCaseDeveloper = [Developer[], Developer[]];

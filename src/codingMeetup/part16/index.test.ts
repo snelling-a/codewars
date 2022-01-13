@@ -1,9 +1,8 @@
 import { askForMissingDetails } from '.';
-import { Developer } from '../types';
+import { TestCaseDeveloper } from '../types';
 
-type TestCase = [Developer[], Developer[]];
 describe(askForMissingDetails.name, () => {
-    const testCase1: TestCase = [
+    const testCase1: TestCaseDeveloper = [
         [
             {
                 firstName: null,
@@ -52,7 +51,7 @@ describe(askForMissingDetails.name, () => {
         ],
     ];
 
-    const testCase2: TestCase = [
+    const testCase2: TestCaseDeveloper = [
         [
             {
                 firstName: 'Sofia',
@@ -82,7 +81,7 @@ describe(askForMissingDetails.name, () => {
         [],
     ];
 
-    const testCase3: TestCase = [
+    const testCase3: TestCaseDeveloper = [
         [
             {
                 firstName: null,
@@ -106,7 +105,7 @@ describe(askForMissingDetails.name, () => {
         ],
     ];
 
-    const testCase4: TestCase = [
+    const testCase4: TestCaseDeveloper = [
         [
             {
                 firstName: 'Kseniya',
@@ -147,7 +146,7 @@ describe(askForMissingDetails.name, () => {
         ],
     ];
 
-    const testCase5: TestCase = [
+    const testCase5: TestCaseDeveloper = [
         [
             {
                 firstName: 'Sofia',
@@ -261,7 +260,7 @@ describe(askForMissingDetails.name, () => {
         ],
     ];
 
-    const testCase6: TestCase = [
+    const testCase6: TestCaseDeveloper = [
         [
             {
                 firstName: 'Paulo',

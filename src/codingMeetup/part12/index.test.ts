@@ -1,7 +1,8 @@
 import { findAdmin } from '.';
+import { LANGUAGE_LIST } from '../constants';
 import { Developer } from '../types';
 
-type TestCase = [string, Developer[], Developer[]];
+type TestCase = [typeof LANGUAGE_LIST[number], Developer[], Developer[]];
 
 describe(findAdmin.name, () => {
     const testDevelopers: Developer[] = [
