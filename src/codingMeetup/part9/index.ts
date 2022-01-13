@@ -37,10 +37,12 @@ import { Developer } from '../types';
 export function isAgeDiverse(list: Developer[]) {
     const ageGroups = new Set(
         list.map(({ age }) => {
-            if (age >= 100) {
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            if (age! >= 100) {
                 return 100;
             }
-            return Math.floor(age / 10) * 10;
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            return Math.floor(age! / 10) * 10;
         }),
     );
 

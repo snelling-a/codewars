@@ -35,8 +35,10 @@ import { Developer } from '../types';
 export function addUsername(list: Developer[]) {
     return list.map((developer) => ({
         ...developer,
-        username: `${developer.firstName.toLowerCase()}${developer.lastName[0].toLowerCase()}${
-            new Date().getFullYear() - developer.age
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        username: `${developer.firstName!.toLowerCase()}${developer.lastName![0].toLowerCase()}${
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            new Date().getFullYear() - developer.age!
         }`,
     }));
 }

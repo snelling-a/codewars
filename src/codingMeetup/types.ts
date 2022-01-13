@@ -1,19 +1,22 @@
 import { CONTINENTS, LANGUAGE_LIST } from './constants';
 
 export type Developer = {
-    firstName: string;
-    lastName: string;
-    country: string;
-    continent: typeof CONTINENTS[number];
-    age: number;
-    language: typeof LANGUAGE_LIST[number];
+    firstName: string | null;
+    lastName: string | null;
+    country: string | null;
+    continent: typeof CONTINENTS[number] | null;
+    age: number | null;
+    language: typeof LANGUAGE_LIST[number] | null;
     githubAdmin?: 'yes' | 'no';
+    greeting?: string;
+    username?: string;
     meal?:
         | 'diabetic'
         | 'gluten-intolerant'
         | 'standard'
         | 'vegan'
         | 'vegetarian';
+    question?: string;
 };
 
 export type FoodOptions = {

@@ -30,8 +30,9 @@ import { Developer } from '../types';
 
 export function findOddNames(list: Developer[]) {
     return list.reduce<Developer[]>((odds, developer) => {
-        const first = developer.firstName
-            .split('')
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        const first = developer
+            .firstName!.split('')
             .reduce(
                 (firstTotal, letter) => firstTotal + letter.charCodeAt(0),
                 0,

@@ -22,6 +22,7 @@ import { Developer } from '../types';
 
 export function getAverageAge(list: Developer[]) {
     return Math.round(
-        list.reduce((acc, { age }) => acc + age, 0) / list.length,
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        list.reduce((acc, { age }) => acc + age!, 0) / list.length,
     );
 }
