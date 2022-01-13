@@ -170,7 +170,7 @@ describe(getAverageAge.name, () => {
         66,
     ];
 
-    const fullListTestCase: TestCaseNumber = [fullList, 44];
+    const testCaseFullList: TestCaseNumber = [fullList, 44];
 
     const testCasesNull: TestCaseNumber[] = [
         [
@@ -214,9 +214,9 @@ describe(getAverageAge.name, () => {
         onePersonTest,
         testCase1,
         testCase2,
-        fullListTestCase,
+        testCaseFullList,
         ...testCasesNull,
-    ])('should return the average age', (developers, expected) =>
-        expect(getAverageAge(developers)).toBe(expected),
+    ])('should return the average age', (developers, averageAge) =>
+        expect(getAverageAge(developers)).toBe(averageAge),
     );
 });

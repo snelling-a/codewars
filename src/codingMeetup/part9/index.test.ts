@@ -149,9 +149,9 @@ describe(isAgeDiverse.name, () => {
         false,
     ];
 
-    const fullListTest: TestCaseBoolean = [fullList, true];
+    const testCaseFullList: TestCaseBoolean = [fullList, true];
 
-    const nullTestCase: TestCaseBoolean = [
+    const testCaseNull: TestCaseBoolean = [
         [
             {
                 firstName: 'Harry',
@@ -237,9 +237,9 @@ describe(isAgeDiverse.name, () => {
         false,
     ];
 
-    it.each([testCase1, testCase2, testCase3, fullListTest, nullTestCase])(
+    it.each([testCase1, testCase2, testCase3, testCaseFullList, testCaseNull])(
         'should return true if all age groups are represented',
-        (developers, allAgesRepresented) =>
-            expect(isAgeDiverse(developers)).toEqual(allAgesRepresented),
+        (developers, areAllAgesRepresented) =>
+            expect(isAgeDiverse(developers)).toEqual(areAllAgesRepresented),
     );
 });

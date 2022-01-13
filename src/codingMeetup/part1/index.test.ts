@@ -63,9 +63,11 @@ describe(countDevelopers.name, () => {
         0,
     ];
 
-    it.each<TestCaseNumber>([testCase1, testCase2, [fullList, 9]])(
+    const testCaseFullList: TestCaseNumber = [fullList, 9];
+
+    it.each<TestCaseNumber>([testCase1, testCase2, testCaseFullList])(
         'should count the number of JS developers form Europe',
-        (test, jsDevsFromEurope) =>
-            expect(countDevelopers(test)).toEqual(jsDevsFromEurope),
+        (developers, jsDevelopersFromEurope) =>
+            expect(countDevelopers(developers)).toEqual(jsDevelopersFromEurope),
     );
 });

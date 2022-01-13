@@ -245,7 +245,7 @@ describe(allContinents.name, () => {
         false,
     ];
 
-    const fullListTestCase: TestCaseBoolean = [fullList, true];
+    const testCaseFullList: TestCaseBoolean = [fullList, true];
 
     it.each([
         testCase1,
@@ -255,10 +255,12 @@ describe(allContinents.name, () => {
         testCase5,
         testCase6,
         testCase7,
-        fullListTestCase,
+        testCaseFullList,
     ])(
         'should determine if all continents are represented',
-        (developers, allContinentsRepresented) =>
-            expect(allContinents(developers)).toEqual(allContinentsRepresented),
+        (developers, areAllContinentsRepresented) =>
+            expect(allContinents(developers)).toEqual(
+                areAllContinentsRepresented,
+            ),
     );
 });

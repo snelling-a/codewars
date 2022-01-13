@@ -434,7 +434,7 @@ describe(findSenior.name, () => {
         ],
     ];
 
-    const fullListTest: TestCaseDeveloper = [
+    const testCaseFullList: TestCaseDeveloper = [
         fullList,
         [
             {
@@ -448,7 +448,7 @@ describe(findSenior.name, () => {
         ],
     ];
 
-    const nullTestCases: TestCaseDeveloper[] = [
+    const testCasesNull: TestCaseDeveloper[] = [
         [
             [
                 {
@@ -503,9 +503,9 @@ describe(findSenior.name, () => {
         testCase6,
         testCase7,
         testCase8,
-        fullListTest,
-        ...nullTestCases,
-    ])('should find the oldest developer(s)', (list, oldest) =>
-        expect(findSenior(list)).toEqual(oldest),
+        testCaseFullList,
+        ...testCasesNull,
+    ])('should find the oldest developer(s)', (developers, oldestDeveloper) =>
+        expect(findSenior(developers)).toEqual(oldestDeveloper),
     );
 });

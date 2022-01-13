@@ -161,13 +161,54 @@ describe(isRubyComing.name, () => {
         false,
     ];
 
+    const testCaseNull: TestCaseBoolean = [
+        [
+            {
+                firstName: 'Kseniya',
+                lastName: 'T.',
+                country: 'Belarus',
+                continent: 'Europe',
+                age: 29,
+                language: null,
+            },
+            {
+                firstName: 'Emma',
+                lastName: 'U.',
+                country: 'Belgium',
+                continent: 'Europe',
+                age: 39,
+                language: null,
+            },
+            {
+                firstName: 'Amar',
+                lastName: 'V.',
+                country: 'Bosnia and Herzegovina',
+                continent: 'Europe',
+                age: 32,
+                language: null,
+            },
+            {
+                firstName: 'Harry',
+                lastName: 'K.',
+                country: 'Brazil',
+                continent: 'Americas',
+                age: 19,
+                language: null,
+            },
+        ],
+        false,
+    ];
+
+    const testCaseFullList: TestCaseBoolean = [fullList, true];
+
     it.each([
         testCase1,
         testCase2,
         testCase3,
         testCase4,
         testCase5,
-        [fullList, true],
+        testCaseFullList,
+        testCaseNull,
     ])(
         'should determine if Ruby developers are coming',
         (developers, isComing) =>

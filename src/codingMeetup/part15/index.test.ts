@@ -204,7 +204,7 @@ describe(findOddNames.name, () => {
         ],
     ];
 
-    const fullListTestCase: TestCaseDeveloper = [
+    const testCaseFullList: TestCaseDeveloper = [
         fullList,
         [
             {
@@ -534,9 +534,11 @@ describe(findOddNames.name, () => {
         testCase3,
         testCase4,
         testCase5,
-        fullListTestCase,
+        testCaseFullList,
         testCaseNull,
-    ])('should return developers with "odd" names', (developers, expected) =>
-        expect(findOddNames(developers)).toEqual(expected),
+    ])(
+        'should return developers with "odd" names',
+        (developers, developersWithOddNames) =>
+            expect(findOddNames(developers)).toEqual(developersWithOddNames),
     );
 });
