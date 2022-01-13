@@ -37,8 +37,11 @@ The input array will always be valid and formatted as in the example above.
 import { Developer } from '../types';
 
 export function greetDevelopers(list: Developer[]) {
-    return list.map((developer) => ({
-        ...developer,
-        greeting: `Hi ${developer.firstName}, what do you like the most about ${developer.language}?`,
-    }));
+    return list.map((developer) => {
+        const { firstName, language } = developer;
+        return {
+            ...developer,
+            greeting: `Hi ${firstName}, what do you like the most about ${language}?`,
+        };
+    });
 }

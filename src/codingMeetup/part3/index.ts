@@ -25,5 +25,5 @@ The input array will always be valid and formatted as in the example above.
 import { Developer } from '../types';
 
 export function isRubyComing(list: Developer[]) {
-    return list.some((developer) => developer.language === 'Ruby');
+    return list.some(({ language }) => language === 'Ruby');
 }

@@ -30,7 +30,9 @@ import { Developer } from '../types';
 
 export function findAdmin(list: Developer[], lang: string) {
     return list.reduce<Developer[]>((admins, developer) => {
-        if (developer.language === lang && developer.githubAdmin === 'yes') {
+        const { language, githubAdmin } = developer;
+
+        if (language === lang && githubAdmin === 'yes') {
             return [...admins, developer];
         }
         return admins;

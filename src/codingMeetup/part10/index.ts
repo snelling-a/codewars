@@ -33,12 +33,16 @@ Notes:
 import { Developer } from '../types';
 
 export function addUsername(list: Developer[]) {
-    return list.map((developer) => ({
-        ...developer,
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        username: `${developer.firstName!.toLowerCase()}${developer.lastName![0].toLowerCase()}${
+    return list.map((developer) => {
+        const { firstName, lastName, age } = developer;
+
+        return {
+            ...developer,
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            new Date().getFullYear() - developer.age!
-        }`,
-    }));
+            username: `${firstName!.toLowerCase()}${lastName![0].toLowerCase()}${
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                new Date().getFullYear() - age!
+            }`,
+        };
+    });
 }
