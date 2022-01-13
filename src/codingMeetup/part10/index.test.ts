@@ -1,7 +1,7 @@
 import { addUsername } from '.';
 import { Developer } from '../types';
 
-type TestCase = [Developer[], ({ username: string } & Developer)[]];
+type TestCase = [Developer[], Developer[]];
 
 describe(addUsername.name, () => {
     const testCase1: TestCase = [
