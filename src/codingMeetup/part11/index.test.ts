@@ -174,12 +174,49 @@ describe(getAverageAge.name, () => {
 
     const fullListTestCase: TestCase = [fullList, 44];
 
+    const testCasesNull: TestCase[] = [
+        [
+            [
+                {
+                    firstName: 'Harry',
+                    lastName: 'K.',
+                    country: 'Brazil',
+                    continent: 'Americas',
+                    age: null,
+                    language: 'Python',
+                },
+            ],
+            0,
+        ],
+        [
+            [
+                {
+                    firstName: 'Harry',
+                    lastName: 'K.',
+                    country: 'Brazil',
+                    continent: 'Americas',
+                    age: null,
+                    language: 'Python',
+                },
+                {
+                    firstName: 'Maria',
+                    lastName: 'Y.',
+                    country: 'Cyprus',
+                    continent: 'Europe',
+                    age: 30,
+                    language: 'Java',
+                },
+            ],
+            15,
+        ],
+    ];
     it.each([
         ...testCases,
         onePersonTest,
         testCase1,
         testCase2,
         fullListTestCase,
+        ...testCasesNull,
     ])('should return the average age', (developers, expected) =>
         expect(getAverageAge(developers)).toBe(expected),
     );

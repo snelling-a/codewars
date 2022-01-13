@@ -515,6 +515,20 @@ describe(findOddNames.name, () => {
         ],
     ];
 
+    const testCaseNull: TestCase = [
+        [
+            {
+                firstName: null,
+                lastName: 'K.',
+                country: 'Brazil',
+                continent: 'Americas',
+                age: 19,
+                language: 'Python',
+            },
+        ],
+        [],
+    ];
+
     it.each([
         testCase1,
         testCase2,
@@ -522,6 +536,7 @@ describe(findOddNames.name, () => {
         testCase4,
         testCase5,
         fullListTestCase,
+        testCaseNull,
     ])('should return developers with "odd" names', (developers, expected) =>
         expect(findOddNames(developers)).toEqual(expected),
     );

@@ -450,6 +450,52 @@ describe(findSenior.name, () => {
         ],
     ];
 
+    const nullTestCases: TestCase[] = [
+        [
+            [
+                {
+                    firstName: 'Mehdi',
+                    lastName: 'H.',
+                    country: 'Tunisia',
+                    continent: 'Africa',
+                    age: null,
+                    language: 'Python',
+                },
+            ],
+            [],
+        ],
+        [
+            [
+                {
+                    firstName: 'Mehdi',
+                    lastName: 'H.',
+                    country: 'Tunisia',
+                    continent: 'Africa',
+                    age: null,
+                    language: 'Python',
+                },
+                {
+                    firstName: 'Yusuf',
+                    lastName: 'N.',
+                    country: 'Turkey',
+                    continent: 'Europe',
+                    age: 22,
+                    language: 'Python',
+                },
+            ],
+            [
+                {
+                    firstName: 'Yusuf',
+                    lastName: 'N.',
+                    country: 'Turkey',
+                    continent: 'Europe',
+                    age: 22,
+                    language: 'Python',
+                },
+            ],
+        ],
+    ];
+
     it.each([
         testCase1,
         testCase2,
@@ -460,6 +506,7 @@ describe(findSenior.name, () => {
         testCase7,
         testCase8,
         fullListTest,
+        ...nullTestCases,
     ])('should find the oldest developer(s)', (list, oldest) =>
         expect(findSenior(list)).toEqual(oldest),
     );

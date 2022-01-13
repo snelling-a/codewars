@@ -56,9 +56,49 @@ describe(countLanguages.name, () => {
         },
     ];
 
-    it.each([testCase1, testCase2])(
-        'should count the languages',
-        (devList, langCount) =>
-            expect(countLanguages(devList)).toEqual(langCount),
+    const testCaseNull: TestCase = [
+        [
+            {
+                firstName: 'Noah',
+                lastName: 'M.',
+                country: 'Switzerland',
+                continent: 'Europe',
+                age: 19,
+                language: null,
+            },
+            {
+                firstName: 'Anna',
+                lastName: 'R.',
+                country: 'Liechtenstein',
+                continent: 'Europe',
+                age: 52,
+                language: null,
+            },
+            {
+                firstName: 'Ramon',
+                lastName: 'R.',
+                country: 'Paraguay',
+                continent: 'Americas',
+                age: 29,
+                language: null,
+            },
+            {
+                firstName: 'George',
+                lastName: 'B.',
+                country: 'England',
+                continent: 'Europe',
+                age: 81,
+                language: null,
+            },
+        ],
+        {},
+    ];
+
+    it.each([testCase1, testCase2, testCaseNull])(
+        'should count the languages %s, %s',
+        (devList, langCount) => {
+            // console.log('devList :>> ', devList);
+            expect(countLanguages(devList)).toEqual(langCount);
+        },
     );
 });
