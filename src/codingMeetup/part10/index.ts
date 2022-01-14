@@ -33,7 +33,7 @@ Notes:
 import { Developer } from '../types';
 
 export function addUsername(list: Developer[]) {
-    return list.map((developer) => {
+    return list.map<Developer>((developer) => {
         const { firstName, lastName, age } = developer;
 
         return {

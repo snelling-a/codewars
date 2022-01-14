@@ -35,7 +35,7 @@ import { Developer } from '../types';
 
 export function askForMissingDetails(list: Developer[]) {
     return list
-        .map((developer) => {
+        .map<Developer | null>((developer) => {
             const missing = Object.keys(developer).find(
                 (key) => developer[key as keyof typeof developer] === null,
             );

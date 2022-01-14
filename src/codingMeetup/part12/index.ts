@@ -26,9 +26,13 @@ Notes:
     The strings representing a given language will always be formatted in the same way (e.g. 'JavaScript' will always be formatted with upper-case 'J' and 'S'.
 */
 
+import { LANGUAGE_LIST } from '../constants';
 import { Developer } from '../types';
 
-export function findAdmin(list: Developer[], lang: string) {
+export function findAdmin(
+    list: Developer[],
+    lang: typeof LANGUAGE_LIST[number],
+) {
     return list.reduce<Developer[]>((admins, developer) => {
         const { language, githubAdmin } = developer;
 
