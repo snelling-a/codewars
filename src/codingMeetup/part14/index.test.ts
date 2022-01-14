@@ -148,7 +148,45 @@ describe(orderFood.name, () => {
         },
     ];
 
-    it.each([testCase1, testCase2])(
+    const testCaseUndefined: TestCase = [
+        [
+            {
+                firstName: 'Noah',
+                lastName: 'M.',
+                country: 'Switzerland',
+                continent: 'Europe',
+                age: 19,
+                language: 'C',
+            },
+            {
+                firstName: 'Anna',
+                lastName: 'R.',
+                country: 'Liechtenstein',
+                continent: 'Europe',
+                age: 52,
+                language: 'JavaScript',
+            },
+            {
+                firstName: 'Ramona',
+                lastName: 'R.',
+                country: 'Paraguay',
+                continent: 'Americas',
+                age: 29,
+                language: 'Ruby',
+            },
+            {
+                firstName: 'George',
+                lastName: 'B.',
+                country: 'England',
+                continent: 'Europe',
+                age: 81,
+                language: 'C',
+            },
+        ],
+        {},
+    ];
+
+    it.each([testCase1, testCase2, testCaseUndefined])(
         'should return count of food options from a list of developers',
         (developers, foodOptions) =>
             expect(orderFood(developers)).toEqual(foodOptions),
