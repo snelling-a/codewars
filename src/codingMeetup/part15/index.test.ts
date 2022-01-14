@@ -224,7 +224,7 @@ describe(findOddNames.name, () => {
                 lastName: 'J.',
             },
             {
-                age: 69,
+                age: 19,
                 continent: 'Oceania',
                 country: 'Australia',
                 firstName: 'Oliver',
@@ -240,7 +240,7 @@ describe(findOddNames.name, () => {
                 lastName: 'V.',
             },
             {
-                age: 98,
+                age: 28,
                 continent: 'Europe',
                 country: 'Bulgaria',
                 firstName: 'Viktoria',
@@ -251,7 +251,7 @@ describe(findOddNames.name, () => {
                 age: 37,
                 continent: 'Americas',
                 country: 'Chile',
-                firstName: 'Agustín',
+                firstName: 'Agustin',
                 language: 'C',
                 lastName: 'M.',
             },
@@ -304,7 +304,7 @@ describe(findOddNames.name, () => {
                 lastName: 'H.',
             },
             {
-                age: 88,
+                age: 28,
                 continent: 'Europe',
                 country: 'Guernsey',
                 firstName: 'Chloe',
@@ -368,7 +368,7 @@ describe(findOddNames.name, () => {
                 lastName: 'E.',
             },
             {
-                age: 129,
+                age: 29,
                 continent: 'Europe',
                 country: 'Malta',
                 firstName: 'Luke',
@@ -384,7 +384,7 @@ describe(findOddNames.name, () => {
                 lastName: 'Y.',
             },
             {
-                age: 90,
+                age: 40,
                 continent: 'Africa',
                 country: 'Morocco',
                 firstName: 'Mohamed',
@@ -392,7 +392,7 @@ describe(findOddNames.name, () => {
                 lastName: 'F.',
             },
             {
-                age: 99,
+                age: 29,
                 continent: 'Americas',
                 country: 'Paraguay',
                 firstName: 'Ramon',
@@ -400,7 +400,7 @@ describe(findOddNames.name, () => {
                 lastName: 'R.',
             },
             {
-                age: 81,
+                age: 31,
                 continent: 'Asia',
                 country: 'Philippines',
                 firstName: 'Althea',
@@ -408,7 +408,7 @@ describe(findOddNames.name, () => {
                 lastName: 'I.',
             },
             {
-                age: 65,
+                age: 35,
                 continent: 'Europe',
                 country: 'Portugal',
                 firstName: 'Joao',
@@ -416,7 +416,7 @@ describe(findOddNames.name, () => {
                 lastName: 'D.',
             },
             {
-                age: 70,
+                age: 30,
                 continent: 'Americas',
                 country: 'Puerto Rico',
                 firstName: 'Victoria',
@@ -424,7 +424,7 @@ describe(findOddNames.name, () => {
                 lastName: 'T.',
             },
             {
-                age: 59,
+                age: 19,
                 continent: 'Europe',
                 country: 'Romania',
                 firstName: 'Andrei',
@@ -432,7 +432,7 @@ describe(findOddNames.name, () => {
                 lastName: 'E.',
             },
             {
-                age: 52,
+                age: 22,
                 continent: 'Europe',
                 country: 'Scotland',
                 firstName: 'Mark',
@@ -448,7 +448,7 @@ describe(findOddNames.name, () => {
                 lastName: 'I.',
             },
             {
-                age: 39,
+                age: 29,
                 continent: 'Europe',
                 country: 'Slovenia',
                 firstName: 'Luka',
@@ -496,6 +496,14 @@ describe(findOddNames.name, () => {
                 lastName: 'O.',
             },
             {
+                age: 32,
+                continent: 'Americas',
+                country: 'United States',
+                firstName: 'Madison',
+                language: 'Ruby',
+                lastName: 'U.',
+            },
+            {
                 age: 19,
                 continent: 'Americas',
                 country: 'Uruguay',
@@ -504,7 +512,7 @@ describe(findOddNames.name, () => {
                 lastName: 'V.',
             },
             {
-                age: 69,
+                age: 29,
                 continent: 'Europe',
                 country: 'Wales',
                 firstName: 'Oliver',

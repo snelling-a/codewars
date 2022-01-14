@@ -149,7 +149,7 @@ describe(isAgeDiverse.name, () => {
         false,
     ];
 
-    const testCaseFullList: TestCaseBoolean = [fullList, true];
+    const testCaseFullList: TestCaseBoolean = [fullList, false];
 
     const testCaseNull: TestCaseBoolean = [
         [

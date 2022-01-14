@@ -170,7 +170,7 @@ describe(getAverageAge.name, () => {
         66,
     ];
 
-    const testCaseFullList: TestCaseNumber = [fullList, 44];
+    const testCaseFullList: TestCaseNumber = [fullList, 34];
 
     const testCasesNull: TestCaseNumber[] = [
         [
