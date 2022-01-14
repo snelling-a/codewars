@@ -1,4 +1,14 @@
-import { CONTINENTS, LANGUAGE_LIST } from './constants';
+import { CONTINENTS, FOOD_OPTIONS, LANGUAGE_LIST } from './constants';
+
+export type FoodOptions = {
+    // eslint-disable-next-line no-unused-vars
+    [K in typeof FOOD_OPTIONS[number]]?: number;
+};
+
+export type LanguageCounts = {
+    // eslint-disable-next-line no-unused-vars
+    [K in typeof LANGUAGE_LIST[number]]?: number;
+};
 
 export type Developer = {
     firstName: string | null;
@@ -10,42 +20,8 @@ export type Developer = {
     githubAdmin?: 'yes' | 'no';
     greeting?: string;
     username?: string;
-    meal?:
-        | 'diabetic'
-        | 'gluten-intolerant'
-        | 'standard'
-        | 'vegan'
-        | 'vegetarian';
+    meal?: typeof FOOD_OPTIONS[number];
     question?: string;
-};
-
-export type FoodOptions = {
-    diabetic?: number;
-    'gluten-intolerant'?: number;
-    standard?: number;
-    vegan?: number;
-    vegetarian?: number;
-};
-
-export type LanguageCounts = {
-    Clojure?: number;
-    C?: number;
-    CSS?: number;
-    'C#'?: number;
-    'C++'?: number;
-    CoffeeScript?: number;
-    Crystal?: number;
-    Dart?: number;
-    Elm?: number;
-    HTML?: number;
-    Java?: number;
-    JavaScript?: number;
-    PHP?: number;
-    Python?: number;
-    Ruby?: number;
-    SQL?: number;
-    Swift?: number;
-    TypeScript?: number;
 };
 
 export type TestCaseBoolean = [Developer[], boolean];
