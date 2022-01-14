@@ -1,3 +1,6 @@
+/* eslint-disable no-empty-function */
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-useless-constructor */
 /* eslint-disable max-classes-per-file */
 /*
@@ -58,13 +61,13 @@ export class ErrorServerResult {
     constructor(public httpCode: number, public message: string) {}
 }
 
-export function getResult(result: SuccessServerResult) {
+export function getResult(result: SuccessServerResult | ErrorServerResult) {
     if (result.httpCode === 200) {
         // Returning resultObject if everything is OK
-        return result.resultObject;
+        return (result as SuccessServerResult).resultObject;
     }
     // Returning result.message in case of error
     // FIXME: help TypeScript Compiler to understand that result here
     // is the instance of ErrorServerResult...
-    return result.message;
+    return (result as ErrorServerResult).message;
 }
