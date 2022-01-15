@@ -43,7 +43,7 @@ describe(countLanguages.name, () => {
         { C: 2, JavaScript: 1, Ruby: 1 },
     ];
 
-    const testCase2: TestCase = [
+    const testCaseFullList: TestCase = [
         fullList,
         {
             C: 10,
@@ -52,13 +52,52 @@ describe(countLanguages.name, () => {
             JavaScript: 15,
             PHP: 8,
             Python: 20,
-            Ruby: 19,
+            Ruby: 20,
         },
     ];
 
-    it.each([testCase1, testCase2])(
-        'should count the languages',
-        (devList, langCount) =>
-            expect(countLanguages(devList)).toEqual(langCount),
+    const testCaseNull: TestCase = [
+        [
+            {
+                firstName: 'Noah',
+                lastName: 'M.',
+                country: 'Switzerland',
+                continent: 'Europe',
+                age: 19,
+                language: null,
+            },
+            {
+                firstName: 'Anna',
+                lastName: 'R.',
+                country: 'Liechtenstein',
+                continent: 'Europe',
+                age: 52,
+                language: null,
+            },
+            {
+                firstName: 'Ramon',
+                lastName: 'R.',
+                country: 'Paraguay',
+                continent: 'Americas',
+                age: 29,
+                language: null,
+            },
+            {
+                firstName: 'George',
+                lastName: 'B.',
+                country: 'England',
+                continent: 'Europe',
+                age: 81,
+                language: null,
+            },
+        ],
+        {},
+    ];
+
+    it.each([testCase1, testCaseFullList, testCaseNull])(
+        'should count the languages %s, %s',
+        (developers, languageCount) => {
+            expect(countLanguages(developers)).toEqual(languageCount);
+        },
     );
 });

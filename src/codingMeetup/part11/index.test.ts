@@ -1,11 +1,9 @@
 import { getAverageAge } from '.';
 import { fullList } from '../fullList';
-import { Developer } from '../types';
-
-type TestCase = [Developer[], number];
+import { TestCaseNumber } from '../types';
 
 describe(getAverageAge.name, () => {
-    const testCases: TestCase[] = [
+    const testCases: TestCaseNumber[] = [
         [
             [
                 {
@@ -50,7 +48,7 @@ describe(getAverageAge.name, () => {
         ],
     ];
 
-    const onePersonTest: TestCase = [
+    const onePersonTest: TestCaseNumber = [
         [
             {
                 firstName: 'Harry',
@@ -64,7 +62,7 @@ describe(getAverageAge.name, () => {
         19,
     ];
 
-    const testCase1: TestCase = [
+    const testCase1: TestCaseNumber = [
         [
             {
                 firstName: 'Kseniya',
@@ -86,7 +84,7 @@ describe(getAverageAge.name, () => {
         31,
     ];
 
-    const testCase2: TestCase = [
+    const testCase2: TestCaseNumber = [
         [
             {
                 firstName: 'Sofia',
@@ -172,15 +170,53 @@ describe(getAverageAge.name, () => {
         66,
     ];
 
-    const fullListTestCase: TestCase = [fullList, 44];
+    const testCaseFullList: TestCaseNumber = [fullList, 34];
+
+    const testCasesNull: TestCaseNumber[] = [
+        [
+            [
+                {
+                    firstName: 'Harry',
+                    lastName: 'K.',
+                    country: 'Brazil',
+                    continent: 'Americas',
+                    age: null,
+                    language: 'Python',
+                },
+            ],
+            0,
+        ],
+        [
+            [
+                {
+                    firstName: 'Harry',
+                    lastName: 'K.',
+                    country: 'Brazil',
+                    continent: 'Americas',
+                    age: null,
+                    language: 'Python',
+                },
+                {
+                    firstName: 'Maria',
+                    lastName: 'Y.',
+                    country: 'Cyprus',
+                    continent: 'Europe',
+                    age: 30,
+                    language: 'Java',
+                },
+            ],
+            15,
+        ],
+    ];
 
     it.each([
         ...testCases,
         onePersonTest,
         testCase1,
         testCase2,
-        fullListTestCase,
-    ])('should return the average age', (developers, expected) =>
-        expect(getAverageAge(developers)).toBe(expected),
+        testCaseFullList,
+        ...testCasesNull,
+    ])('should return the average age', (developers, averageAge) =>
+        expect(getAverageAge(developers)).toBe(averageAge),
     );
 });

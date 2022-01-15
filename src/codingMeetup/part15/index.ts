@@ -30,13 +30,18 @@ import { Developer } from '../types';
 
 export function findOddNames(list: Developer[]) {
     return list.reduce<Developer[]>((odds, developer) => {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const first = developer
-            .firstName!.split('')
-            .reduce(
-                (firstTotal, letter) => firstTotal + letter.charCodeAt(0),
-                0,
-            );
+        const { firstName } = developer;
+
+        const first =
+            (firstName &&
+                firstName
+                    .split('')
+                    .reduce(
+                        (firstTotal, letter) =>
+                            firstTotal + letter.charCodeAt(0),
+                        0,
+                    )) ||
+            0;
 
         if (first % 2 !== 0) {
             return [...odds, developer];
@@ -47,6 +52,7 @@ export function findOddNames(list: Developer[]) {
 
     // return list.filter(
     //     ({ firstName }) =>
+    //         firstName &&
     //         firstName
     //             .split('')
     //             .reduce(
@@ -55,6 +61,6 @@ export function findOddNames(list: Developer[]) {
     //                 0,
     //             ) %
     //             2 !==
-    //         0,
+    //             0,
     // );
 }

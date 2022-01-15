@@ -29,7 +29,6 @@ import { Developer } from '../types';
 
 export function isSameLanguage(list: Developer[]) {
     return list.every(
-        (developer, _, developers) =>
-            developer.language === developers[0].language,
+        ({ language }, _, developers) => language === developers[0].language,
     );
 }

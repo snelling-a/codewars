@@ -26,16 +26,17 @@ Notes:
 import { Developer, LanguageCounts } from '../types';
 
 export function countLanguages(list: Developer[]) {
-    return list.reduce<LanguageCounts>((languages, { language }) => {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const devLang = languages[language!];
-
-        if (devLang) {
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            return { ...languages, [language!]: devLang + 1 };
+    return list.reduce<LanguageCounts>((languageCounts, { language }) => {
+        if (!language) {
+            return languageCounts;
         }
 
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        return { ...languages, [language!]: 1 };
+        const developerLanguage = languageCounts[language];
+
+        if (developerLanguage) {
+            return { ...languageCounts, [language]: developerLanguage + 1 };
+        }
+
+        return { ...languageCounts, [language]: 1 };
     }, {});
 }

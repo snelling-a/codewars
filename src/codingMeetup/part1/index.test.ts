@@ -1,11 +1,9 @@
 import { countDevelopers } from '.';
 import { fullList } from '../fullList';
-import { Developer } from '../types';
-
-type TestCase = [Developer[], number];
+import { TestCaseNumber } from '../types';
 
 describe(countDevelopers.name, () => {
-    const testCase1: TestCase = [
+    const testCase1: TestCaseNumber = [
         [
             {
                 firstName: 'Noah',
@@ -43,7 +41,7 @@ describe(countDevelopers.name, () => {
         1,
     ];
 
-    const testCase2: TestCase = [
+    const testCase2: TestCaseNumber = [
         [
             {
                 firstName: 'Oliver',
@@ -65,9 +63,11 @@ describe(countDevelopers.name, () => {
         0,
     ];
 
-    it.each<TestCase>([testCase1, testCase2, [fullList, 9]])(
+    const testCaseFullList: TestCaseNumber = [fullList, 9];
+
+    it.each<TestCaseNumber>([testCase1, testCase2, testCaseFullList])(
         'should count the number of JS developers form Europe',
-        (test, jsDevsFromEurope) =>
-            expect(countDevelopers(test)).toEqual(jsDevsFromEurope),
+        (developers, jsDevelopersFromEurope) =>
+            expect(countDevelopers(developers)).toEqual(jsDevelopersFromEurope),
     );
 });

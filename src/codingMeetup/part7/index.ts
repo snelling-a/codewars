@@ -28,11 +28,11 @@ import { Developer } from '../types';
 
 export function findSenior(list: Developer[]) {
     return list.reduce<Developer[]>(
-        (a, b) =>
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            b.age === Math.max(...list!.map<number>((d) => d.age!))
-                ? [...a, b]
-                : a,
+        (seniorDevelopers, developer) =>
+            developer.age ===
+            Math.max(...list.map<number>(({ age }) => age ?? 0))
+                ? [...seniorDevelopers, developer]
+                : seniorDevelopers,
         [],
     );
 }

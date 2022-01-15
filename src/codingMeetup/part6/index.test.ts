@@ -181,6 +181,9 @@ describe(isSameLanguage.name, () => {
         ],
         true,
     ];
+
+    const testCaseFullList: TestCaseBoolean = [fullList, false];
+
     it.each([
         testCase1,
         testCase2,
@@ -188,10 +191,10 @@ describe(isSameLanguage.name, () => {
         testCase4,
         testCase5,
         testCase6,
-        [fullList, false],
+        testCaseFullList,
     ])(
         'should determine if all developers work in the same language',
-        (devList, expected) =>
-            expect(isSameLanguage(devList)).toEqual(expected),
+        (developers, areAllSameLanguage) =>
+            expect(isSameLanguage(developers)).toEqual(areAllSameLanguage),
     );
 });

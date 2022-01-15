@@ -29,11 +29,8 @@ import { Developer } from '../types';
 
 export function countDevelopers(list: Developer[]) {
     return list.reduce(
-        (sum, developer) =>
-            developer.language === 'JavaScript' &&
-            developer.continent === 'Europe'
-                ? sum + 1
-                : sum,
+        (sum, { language, continent }) =>
+            language === 'JavaScript' && continent === 'Europe' ? sum + 1 : sum,
         0,
     );
 }

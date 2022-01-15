@@ -38,7 +38,7 @@ export const fullList: Developer[] = [
         lastName: 'Q.',
         country: 'Armenia',
         continent: 'Europe',
-        age: 80,
+        age: 30,
         language: 'Clojure',
     },
     {
@@ -54,7 +54,7 @@ export const fullList: Developer[] = [
         lastName: 'Q.',
         country: 'Australia',
         continent: 'Oceania',
-        age: 69,
+        age: 19,
         language: 'PHP',
     },
     {
@@ -110,7 +110,7 @@ export const fullList: Developer[] = [
         lastName: 'W.',
         country: 'Bulgaria',
         continent: 'Europe',
-        age: 98,
+        age: 28,
         language: 'PHP',
     },
     {
@@ -122,7 +122,7 @@ export const fullList: Developer[] = [
         language: 'Java',
     },
     {
-        firstName: 'Agustín',
+        firstName: 'Agustin',
         lastName: 'M.',
         country: 'Chile',
         continent: 'Americas',
@@ -150,7 +150,7 @@ export const fullList: Developer[] = [
         lastName: 'X.',
         country: 'Croatia',
         continent: 'Europe',
-        age: 75,
+        age: 35,
         language: 'Python',
     },
     {
@@ -270,7 +270,7 @@ export const fullList: Developer[] = [
         lastName: 'K.',
         country: 'Guernsey',
         continent: 'Europe',
-        age: 88,
+        age: 28,
         language: 'Ruby',
     },
     {
@@ -318,7 +318,7 @@ export const fullList: Developer[] = [
         lastName: 'N.',
         country: 'Ireland',
         continent: 'Europe',
-        age: 98,
+        age: 38,
         language: 'Ruby',
     },
     {
@@ -342,7 +342,7 @@ export const fullList: Developer[] = [
         lastName: 'P.',
         country: 'Italy',
         continent: 'Europe',
-        age: 71,
+        age: 41,
         language: 'Clojure',
     },
     {
@@ -438,7 +438,7 @@ export const fullList: Developer[] = [
         lastName: 'V.',
         country: 'Malta',
         continent: 'Europe',
-        age: 129,
+        age: 29,
         language: 'PHP',
     },
     {
@@ -462,7 +462,7 @@ export const fullList: Developer[] = [
         lastName: 'X.',
         country: 'Monaco',
         continent: 'Europe',
-        age: 79,
+        age: 29,
         language: 'PHP',
     },
     {
@@ -486,7 +486,7 @@ export const fullList: Developer[] = [
         lastName: 'F.',
         country: 'Morocco',
         continent: 'Africa',
-        age: 90,
+        age: 40,
         language: 'Ruby',
     },
     {
@@ -494,7 +494,7 @@ export const fullList: Developer[] = [
         lastName: 'G.',
         country: 'Nepal',
         continent: 'Asia',
-        age: 112,
+        age: 22,
         language: 'Java',
     },
     {
@@ -534,7 +534,7 @@ export const fullList: Developer[] = [
         lastName: 'H.',
         country: 'Pakistan',
         continent: 'Asia',
-        age: 8,
+        age: 28,
         language: 'JavaScript',
     },
     {
@@ -542,7 +542,7 @@ export const fullList: Developer[] = [
         lastName: 'R.',
         country: 'Paraguay',
         continent: 'Americas',
-        age: 99,
+        age: 29,
         language: 'Ruby',
     },
     {
@@ -550,7 +550,7 @@ export const fullList: Developer[] = [
         lastName: 'S.',
         country: 'Peru',
         continent: 'Americas',
-        age: 60,
+        age: 30,
         language: 'C',
     },
     {
@@ -558,7 +558,7 @@ export const fullList: Developer[] = [
         lastName: 'I.',
         country: 'Philippines',
         continent: 'Asia',
-        age: 81,
+        age: 31,
         language: 'Python',
     },
     {
@@ -574,7 +574,7 @@ export const fullList: Developer[] = [
         lastName: 'D.',
         country: 'Portugal',
         continent: 'Europe',
-        age: 65,
+        age: 35,
         language: 'JavaScript',
     },
     {
@@ -582,7 +582,7 @@ export const fullList: Developer[] = [
         lastName: 'T.',
         country: 'Puerto Rico',
         continent: 'Americas',
-        age: 70,
+        age: 30,
         language: 'Python',
     },
     {
@@ -598,7 +598,7 @@ export const fullList: Developer[] = [
         lastName: 'E.',
         country: 'Romania',
         continent: 'Europe',
-        age: 59,
+        age: 19,
         language: 'C',
     },
     {
@@ -614,7 +614,7 @@ export const fullList: Developer[] = [
         lastName: 'K.',
         country: 'Saudi Arabia',
         continent: 'Asia',
-        age: 105,
+        age: 21,
         language: 'Clojure',
     },
     {
@@ -622,7 +622,7 @@ export const fullList: Developer[] = [
         lastName: 'G.',
         country: 'Scotland',
         continent: 'Europe',
-        age: 52,
+        age: 22,
         language: 'JavaScript',
     },
     {
@@ -646,7 +646,7 @@ export const fullList: Developer[] = [
         lastName: 'J.',
         country: 'Slovenia',
         continent: 'Europe',
-        age: 39,
+        age: 29,
         language: 'Clojure',
     },
     {
@@ -746,6 +746,14 @@ export const fullList: Developer[] = [
         language: 'C',
     },
     {
+        firstName: 'Madison',
+        lastName: 'U.',
+        country: 'United States',
+        continent: 'Americas',
+        age: 32,
+        language: 'Ruby',
+    },
+    {
         firstName: 'Agustin',
         lastName: 'V.',
         country: 'Uruguay',
@@ -758,7 +766,7 @@ export const fullList: Developer[] = [
         lastName: 'W.',
         country: 'Venezuela',
         continent: 'Americas',
-        age: 8,
+        age: 28,
         language: 'Python',
     },
     {
@@ -766,7 +774,7 @@ export const fullList: Developer[] = [
         lastName: 'P.',
         country: 'Wales',
         continent: 'Europe',
-        age: 69,
+        age: 29,
         language: 'JavaScript',
     },
 ];

@@ -95,9 +95,11 @@ describe(getFirstPython.name, () => {
         'Sou, Japan',
     ];
 
-    it.each([testCase1, testCase2, testCase3, [fullList, 'Noel, Albania']])(
+    const testCaseFullList: TestCase = [fullList, 'Noel, Albania'];
+
+    it.each([testCase1, testCase2, testCase3, testCaseFullList])(
         'should return the first Python developer to sign up for the meetup',
-        (developers, first) =>
-            expect(getFirstPython(developers)).toEqual(first),
+        (developers, firstPythonDeveloper) =>
+            expect(getFirstPython(developers)).toEqual(firstPythonDeveloper),
     );
 });

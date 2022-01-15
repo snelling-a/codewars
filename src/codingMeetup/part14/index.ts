@@ -32,10 +32,13 @@ Notes:
 import { Developer, FoodOptions } from '../types';
 
 export function orderFood(list: Developer[]) {
-    return list.reduce<FoodOptions>((acc, { meal }) => {
+    return list.reduce<FoodOptions>((foodOptions, { meal }) => {
         if (meal) {
-            acc[meal] = (acc[meal] || 0) + 1;
+            const noParamReassign = foodOptions;
+            noParamReassign[meal] = (noParamReassign[meal] || 0) + 1;
+            return noParamReassign;
         }
-        return acc;
+
+        return foodOptions;
     }, {});
 }

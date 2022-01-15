@@ -31,8 +31,8 @@ import { Developer } from '../types';
 
 export function allContinents(list: Developer[]) {
     return (
-        CONTINENTS.filter((continent) =>
-            list.map((dev) => dev.continent).includes(continent),
+        CONTINENTS.filter((continents) =>
+            list.map(({ continent }) => continent).includes(continents),
         ).length === CONTINENTS.length
     );
 }

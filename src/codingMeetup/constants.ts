@@ -26,3 +26,11 @@ export const LANGUAGE_LIST = [
     'Swift',
     'TypeScript',
 ] as const;
+
+export const FOOD_OPTIONS = [
+    'diabetic',
+    'gluten-intolerant',
+    'standard',
+    'vegan',
+    'vegetarian',
+] as const;
