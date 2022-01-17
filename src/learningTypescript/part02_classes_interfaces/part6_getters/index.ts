@@ -37,9 +37,10 @@ export class Cuboid {
 
     public get surfaceArea() {
         return (
-            2 * this.length * this.width +
-            2 * this.length * this.height +
-            2 * this.height * this.width
+            2 *
+            (this.length * this.width +
+                this.length * this.height +
+                this.height * this.width)
         );
     }
 
