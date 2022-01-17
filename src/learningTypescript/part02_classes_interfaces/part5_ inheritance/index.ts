@@ -31,16 +31,6 @@ which accepts no arguments and returns "Hello (insert_master_name_here)"
 (of course not the literal string but replace the (insert_master_name_here) with the name of the dog's master).
 */
 
-declare var IAnimal: {
-    new (
-        name: string,
-        age: number,
-        legs: number,
-        species: string,
-        status: string,
-    ): IAnimal;
-};
-
 interface IAnimal {
     name: string;
     age: number;
@@ -48,4 +38,24 @@ interface IAnimal {
     species: string;
     status: string;
     introduce: () => string;
+}
+
+export class Animal implements IAnimal {
+    constructor(
+        public name: string,
+        public age: number,
+        public legs: number,
+        public species: string,
+        public status: string,
+    ) {
+        this.name = name;
+        this.age = age;
+        this.legs = legs;
+        this.species = species;
+        this.status = status;
+    }
+
+    introduce() {
+        return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+    }
 }
