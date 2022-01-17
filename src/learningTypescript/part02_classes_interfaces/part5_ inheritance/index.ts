@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 /*
 https://www.codewars.com/kata/59138d93eefeaecdbe000031
 
@@ -58,4 +59,25 @@ export class Animal implements IAnimal {
     introduce() {
         return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
     }
+}
+
+export class Shark implements IAnimal {
+    constructor(
+        public name: string,
+        public age: number,
+        public status: string,
+    ) {
+        this.name = name;
+        this.age = age;
+        this.status = status;
+        this.legs = 0;
+        this.species = 'shark';
+        this.introduce = Animal.prototype.introduce;
+    }
+
+    introduce: () => string;
+
+    legs: number;
+
+    species: string;
 }
