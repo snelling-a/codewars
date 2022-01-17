@@ -61,70 +61,40 @@ export class Animal implements IAnimal {
     }
 }
 
-export class Shark implements IAnimal {
+export class Shark extends Animal {
     constructor(
         public name: string,
         public age: number,
         public status: string,
     ) {
-        this.name = name;
-        this.age = age;
-        this.status = status;
-        this.legs = 0;
-        this.species = 'shark';
-        this.introduce = Animal.prototype.introduce;
+        super(name, age, 0, 'shark', status);
     }
-
-    introduce: () => string;
-
-    legs: number;
-
-    species: string;
 }
 
-export class Cat implements IAnimal {
+export class Cat extends Animal {
     constructor(
         public name: string,
         public age: number,
         public status: string,
     ) {
-        this.name = name;
-        this.age = age;
-        this.status = status;
-        this.legs = 4;
-        this.species = 'cat';
-        this.introduce = () =>
-            `Hello, my name is ${name} and I am ${age} years old.  Meow meow!`;
+        super(name, age, 4, 'cat', status);
     }
 
-    legs: number;
-
-    species: string;
-
-    introduce: () => string;
+    introduce() {
+        return `${super.introduce()}  Meow meow!`;
+    }
 }
 
-export class Dog implements IAnimal {
+export class Dog extends Animal {
     constructor(
         public name: string,
         public age: number,
         public status: string,
         public master: string,
     ) {
-        this.name = name;
-        this.age = age;
-        this.status = status;
+        super(name, age, 4, 'dog', status);
         this.master = master;
-        this.legs = 4;
-        this.species = 'dog';
-        this.introduce = Animal.prototype.introduce;
     }
-
-    legs: number;
-
-    species: string;
-
-    introduce: () => string;
 
     greetMaster() {
         return `Hello ${this.master}`;
