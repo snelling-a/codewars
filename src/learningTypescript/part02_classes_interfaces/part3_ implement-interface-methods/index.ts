@@ -32,9 +32,33 @@ interface IGeometricFigure {
 }
 
 export class Square implements IGeometricFigure {
-    // TODO:
+    side: number;
+
+    constructor(side: number) {
+        this.side = side;
+    }
+
+    area(): number {
+        return this.side ** 2;
+    }
+
+    perimeter(): number {
+        return this.side * 4;
+    }
 }
 
 export class Circle implements IGeometricFigure {
-    // TODO:
+    radius: number;
+
+    constructor(radius: number) {
+        this.radius = radius;
+    }
+
+    area(): number {
+        return Math.PI * this.radius ** 2;
+    }
+
+    perimeter(): number {
+        return 2 * Math.PI * this.radius;
+    }
 }
