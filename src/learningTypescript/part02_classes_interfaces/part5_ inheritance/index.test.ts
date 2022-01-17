@@ -1,6 +1,6 @@
 import { Animal, Cat, Dog, Shark } from '.';
 
-describe('The Animal class', () => {
+describe(`The ${Animal.name} class`, () => {
     it('should construct an object properly', () => {
         const octopussy = new Animal(
             'Octopussy',
@@ -20,53 +20,49 @@ describe('The Animal class', () => {
     });
 });
 
-describe('The Shark class', () => {
-    it('should construct an object properly', () => {
-        const billy = new Shark('Billy', 3, 'Alive and well');
-        expect(billy.name).toEqual('Billy');
-        expect(billy.age).toEqual(3);
-        expect(billy.legs).toEqual(0);
-        expect(billy.species).toEqual('shark');
-        expect(billy.status).toEqual('Alive and well');
-        expect(billy.introduce()).toEqual(
-            'Hello, my name is Billy and I am 3 years old.',
-        );
-        const charles = new Shark('Charles', 8, 'Finding a mate');
-        expect(charles.name).toEqual('Charles');
-        expect(charles.age).toEqual(8);
-        expect(charles.legs).toEqual(0);
-        expect(charles.species).toEqual('shark');
-        expect(charles.status).toEqual('Finding a mate');
-        expect(charles.introduce()).toEqual(
-            'Hello, my name is Charles and I am 8 years old.',
-        );
-    });
+describe(`The ${Shark.name} class`, () => {
+    it.each([
+        ['Billy', 3, 'Alive and well'],
+        ['Charles', 8, 'Finding a mate'],
+    ])(
+        `should construct a ${Shark.name} with name: '%s', age %d, and status: '%s'`,
+        (name, age, status) => {
+            const shark = new Shark(name, age, status);
+
+            expect(shark.name).toEqual(name);
+            expect(shark.age).toEqual(age);
+            expect(shark.legs).toEqual(0);
+            expect(shark.species).toEqual('shark');
+            expect(shark.status).toEqual(status);
+            expect(shark.introduce()).toEqual(
+                `Hello, my name is ${name} and I am ${age} years old.`,
+            );
+        },
+    );
 });
 
-describe('The Cat class', () => {
-    it('should construct an object properly', () => {
-        const cathy = new Cat('Cathy', 7, 'Playing with a ball of yarn');
-        expect(cathy.name).toEqual('Cathy');
-        expect(cathy.age).toEqual(7);
-        expect(cathy.legs).toEqual(4);
-        expect(cathy.species).toEqual('cat');
-        expect(cathy.status).toEqual('Playing with a ball of yarn');
-        expect(cathy.introduce()).toEqual(
-            'Hello, my name is Cathy and I am 7 years old.  Meow meow!',
-        );
-        const spitsy = new Cat('Spitsy', 6, 'sleeping');
-        expect(spitsy.name).toEqual('Spitsy');
-        expect(spitsy.age).toEqual(6);
-        expect(spitsy.legs).toEqual(4);
-        expect(spitsy.species).toEqual('cat');
-        expect(spitsy.status).toEqual('sleeping');
-        expect(spitsy.introduce()).toEqual(
-            'Hello, my name is Spitsy and I am 6 years old.  Meow meow!',
-        );
-    });
+describe(`The ${Cat.name} class`, () => {
+    it.each([
+        ['Cathy', 7, 'Playing with a ball of yarn'],
+        ['Spitsy', 6, 'sleeping'],
+    ])(
+        `should construct a ${Cat.name} with name: '%s', age %d, and status: '%s'`,
+        (name, age, status) => {
+            const cat = new Cat(name, age, status);
+
+            expect(cat.name).toEqual(name);
+            expect(cat.age).toEqual(age);
+            expect(cat.legs).toEqual(4);
+            expect(cat.species).toEqual('cat');
+            expect(cat.status).toEqual(status);
+            expect(cat.introduce()).toEqual(
+                `Hello, my name is ${name} and I am ${age} years old.  Meow meow!`,
+            );
+        },
+    );
 });
 
-describe('The Dog class', () => {
+describe(`The ${Dog.name} class`, () => {
     it('should construct an object properly', () => {
         const doug = new Dog('Doug', 12, 'Serving his master', 'Eliza');
         expect(doug.name).toEqual('Doug');
