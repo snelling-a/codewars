@@ -81,3 +81,25 @@ export class Shark implements IAnimal {
 
     species: string;
 }
+
+export class Cat implements IAnimal {
+    constructor(
+        public name: string,
+        public age: number,
+        public status: string,
+    ) {
+        this.name = name;
+        this.age = age;
+        this.status = status;
+        this.legs = 4;
+        this.species = 'cat';
+        this.introduce = () =>
+            `Hello, my name is ${name} and I am ${age} years old.  Meow meow!`;
+    }
+
+    legs: number;
+
+    species: string;
+
+    introduce: () => string;
+}
