@@ -21,13 +21,35 @@ Articles of Interest
 Below are some articles of interest that may help you complete this Kata:
 
 Stack Overflow - What are getters and setters in ES6? (http://stackoverflow.com/questions/28222276/what-are-getters-and-setters-for-in-ecmascript-6-classes)
-getter - Javascript | MDN (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get)
+getter - Javascript | MDN (https://developer.mozil*la.org/en-US/docs/Web/JavaScript/Reference/Functions/get)
 */
 
 export class Cuboid {
-    // TODO:
+    constructor(
+        public length: number,
+        public width: number,
+        public height: number,
+    ) {
+        this.length = length;
+        this.width = width;
+        this.height = height;
+    }
+
+    public get surfaceArea() {
+        return (
+            2 * this.length * this.width +
+            2 * this.length * this.height +
+            2 * this.height * this.width
+        );
+    }
+
+    public get volume() {
+        return this.length * this.width * this.height;
+    }
 }
 
 export class Cube extends Cuboid {
-    // TODO:
+    constructor(length: number) {
+        super(length, length, length);
+    }
 }
