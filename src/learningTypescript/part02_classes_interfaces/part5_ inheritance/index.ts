@@ -103,3 +103,30 @@ export class Cat implements IAnimal {
 
     introduce: () => string;
 }
+
+export class Dog implements IAnimal {
+    constructor(
+        public name: string,
+        public age: number,
+        public status: string,
+        public master: string,
+    ) {
+        this.name = name;
+        this.age = age;
+        this.status = status;
+        this.master = master;
+        this.legs = 4;
+        this.species = 'dog';
+        this.introduce = Animal.prototype.introduce;
+    }
+
+    legs: number;
+
+    species: string;
+
+    introduce: () => string;
+
+    greetMaster() {
+        return `Hello ${this.master}`;
+    }
+}
