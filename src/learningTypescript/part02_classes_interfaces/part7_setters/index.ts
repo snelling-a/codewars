@@ -25,7 +25,7 @@ What are getters and setters? - Stack Overflow (http://stackoverflow.com/questio
 ES6 Classes Intro (includes section on getters and setters) (http://exploringjs.com/es6/ch_classes.html)
 */
 
-interface ICuboid {
+export interface ICuboid {
     /** Length of the cube */
     length: number;
     /** Surface area of the cube */

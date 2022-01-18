@@ -1,30 +1,52 @@
-import { Cube } from '.';
+import { Cube, ICuboid } from '.';
 
-describe('The Cube class', () => {
-    it('should initialize properly and have working getters and setters', () => {
-        const cube = new Cube(1);
+describe(`The ${Cube.name} class`, () => {
+    let cube: ICuboid;
+
+    it('should initialize properly', () => {
+        cube = new Cube(1);
+
         expect(cube.length).toEqual(1);
         expect(cube.surfaceArea).toEqual(6);
         expect(cube.volume).toEqual(1);
-
-        cube.length = 2;
-        expect(cube.surfaceArea).toEqual(24);
-        expect(cube.volume).toEqual(8);
-
-        cube.surfaceArea = 54;
-        expect(cube.length).toEqual(3);
-        expect(cube.volume).toEqual(27);
-
-        cube.surfaceArea = 96;
-        expect(cube.length).toEqual(4);
-        expect(cube.volume).toEqual(64);
-
-        cube.volume = 125;
-        expect(cube.length).toEqual(5);
-        expect(cube.surfaceArea).toEqual(150);
-
-        cube.volume = 1000;
-        expect(cube.length).toEqual(10);
-        expect(cube.surfaceArea).toEqual(600);
     });
+
+    it.each([
+        [2, 24, 8],
+        [100, 60_000, 1_000_000],
+    ])(
+        'should have working getters when length is set to %d',
+        (length, surfaceArea, volume) => {
+            cube.length = length;
+
+            expect(cube.surfaceArea).toEqual(surfaceArea);
+            expect(cube.volume).toEqual(volume);
+        },
+    );
+
+    it.each([
+        [54, 3, 27],
+        [96, 4, 64],
+    ])(
+        'should have working getters when surfaceArea is set to %d',
+        (surfaceArea, length, volume) => {
+            cube.surfaceArea = surfaceArea;
+
+            expect(cube.length).toEqual(length);
+            expect(cube.volume).toEqual(volume);
+        },
+    );
+
+    it.each([
+        [125, 5, 150],
+        [1000, 10, 600],
+    ])(
+        'should have working getters when volume is set to %d',
+        (volume, length, surfaceArea) => {
+            cube.volume = volume;
+
+            expect(cube.length).toEqual(length);
+            expect(cube.surfaceArea).toEqual(surfaceArea);
+        },
+    );
 });
