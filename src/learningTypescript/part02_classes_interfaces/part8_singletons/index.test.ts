@@ -1,6 +1,6 @@
 import { SingletonCounter } from '.';
 
-describe('The SingletonCounter class', () => {
+describe(`The ${SingletonCounter.name} class`, () => {
     let count = 4;
 
     it('should have correct inc() method', () => {
@@ -14,9 +14,9 @@ describe('The SingletonCounter class', () => {
     it('should work as a singleton', () => {
         const counter1 = SingletonCounter.getInstance();
         const counter2 = SingletonCounter.getInstance();
-        expect(counter1.inc()).toEqual(++count);
-        expect(counter2.inc()).toEqual(++count);
-        expect(counter1.inc()).toEqual(++count);
-        expect(counter2.inc()).toEqual(++count);
+        expect(counter1.inc()).toEqual((count += 1));
+        expect(counter2.inc()).toEqual((count += 1));
+        expect(counter1.inc()).toEqual((count += 1));
+        expect(counter2.inc()).toEqual((count += 1));
     });
 });
