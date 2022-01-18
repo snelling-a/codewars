@@ -21,5 +21,20 @@ This class should have inc() which increments the value of the counter (default 
 */
 
 export class SingletonCounter {
-    // TODO:
+    value: number;
+
+    static instance = new SingletonCounter();
+
+    private constructor() {
+        this.value = 0;
+    }
+
+    static getInstance() {
+        return SingletonCounter.instance;
+    }
+
+    inc() {
+        this.value += 1;
+        return this.value;
+    }
 }
