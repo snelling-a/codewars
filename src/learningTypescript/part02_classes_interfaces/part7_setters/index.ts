@@ -35,5 +35,23 @@ interface ICuboid {
 }
 
 export class Cube implements ICuboid {
-    // TODO:
+    constructor(public length: number) {
+        this.length = length;
+    }
+
+    get volume(): number {
+        return this.length ** 3;
+    }
+
+    set volume(value: number) {
+        this.length = Math.cbrt(value);
+    }
+
+    get surfaceArea(): number {
+        return 6 * this.length ** 2;
+    }
+
+    set surfaceArea(value: number) {
+        this.length = Math.sqrt(value / 6);
+    }
 }
