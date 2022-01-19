@@ -45,5 +45,11 @@ Your task is to create function intersect which returns object with properties t
 export function intersect<T, U>(first: T, second: U): T & U {
     const result = <T & U>{};
     // TODO:
+    Object.keys(first).forEach((key) => {
+        if (second[key as keyof U]) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (<any>result)[key] = (<any>first)[key];
+        }
+    });
     return result;
 }
