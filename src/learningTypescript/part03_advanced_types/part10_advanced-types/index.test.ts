@@ -1,11 +1,15 @@
 import { join } from '.';
 
-describe('join', () => {
-    it('should return string as it is', () => {
-        expect(join('Hello')).toEqual('Hello');
-    });
-    it('should return joined string in case of string[]', () => {
-        const arr = ['Hello', 'world!'];
-        expect(join(arr, ', ')).toEqual('Hello, world!');
-    });
+describe(join.name, () => {
+    it.each<[string, string | undefined, string | string[]]>([
+        ['Hello', undefined, 'Hello'],
+        ['Hello', ' ', 'Hello'],
+        ['Hello', '-', 'Hello'],
+        ['Hello world!', ' ', ['Hello world!']],
+        ['Hello-world!', '-', ['Hello', 'world!']],
+        ['Hello,world!', undefined, ['Hello', 'world!']],
+    ])(
+        'should return "%s" given glue: "%s" and tokens: "%s"',
+        (expected, glue, tokens) => expect(join(tokens, glue)).toBe(expected),
+    );
 });
