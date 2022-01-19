@@ -61,5 +61,9 @@ Hint: Use typeof before calling join method.
 */
 
 export function join(tokens: string | string[], glue?: string): string {
-    // TODO:
+    if (typeof tokens === 'object') {
+        return tokens.join(glue);
+    }
+
+    return tokens;
 }
