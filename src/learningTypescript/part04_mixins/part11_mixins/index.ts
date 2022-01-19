@@ -74,10 +74,10 @@ You're required to implement mixin Serializable which should contain:
 
 export class Serializable {
     serialize(): string {
-        // TODO:
+        return JSON.stringify(this);
     }
 
     deserialize(source: string): void {
-        // TODO:
+        Object.assign(this, JSON.parse(source));
     }
 }
