@@ -49,9 +49,7 @@
         // "outFile": "./",                                  /* Specify a file that bundles all outputs into one JavaScript file. If `declaration` is true, also designates a file that bundles all .d.ts output. */
         "outDir": "build" /* Specify an output folder for all emitted files. */,
         "paths": {
-            "@src/*": [
-                "./src/*"
-            ]
+            "@src/*": ["./src/*"]
         } /* Specify a set of entries that re-map imports to additional lookup locations. */,
         "removeComments": true /* Disable emitting comments. */,
         "rootDir": "." /* Specify the root folder within your source files. */,
@@ -74,7 +72,7 @@
         // "allowUnreachableCode": true,                     /* Disable error reporting for unreachable code. */
         /* Completeness */
         // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-        "skipLibCheck": true, /* Skip type checking all .d.ts files. *//* Type Checking */
+        "skipLibCheck": true /* Skip type checking all .d.ts files. */ /* Type Checking */,
         "strict": true /* Enable all strict type-checking options. */,
         /* Visit https://aka.ms/tsconfig.json to read more about this file */
         /* Projects */
@@ -87,12 +85,6 @@
         /* Language and Environment */
         "target": "ES6" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     },
-    "exclude": [
-        "node_modules",
-        "build",
-        "coverage"
-    ],
-    "include": [
-        "src"
-    ]
+    "exclude": ["node_modules", "build", "coverage"],
+    "include": ["src"]
 }

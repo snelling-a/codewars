@@ -34,9 +34,7 @@ import { Developer, FoodOptions } from '../types';
 export function orderFood(list: Developer[]) {
     return list.reduce<FoodOptions>((foodOptions, { meal }) => {
         if (meal) {
-            const noParamReassign = foodOptions;
-            noParamReassign[meal] = (noParamReassign[meal] || 0) + 1;
-            return noParamReassign;
+            return { ...foodOptions, [meal]: (foodOptions[meal] || 0) + 1 };
         }
 
         return foodOptions;

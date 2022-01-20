@@ -25,6 +25,7 @@ export class MultiplesOf3Or5 {
                 sum += i;
             }
         }
+
         return sum;
     }
 }

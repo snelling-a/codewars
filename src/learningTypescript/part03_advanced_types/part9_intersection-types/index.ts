@@ -51,5 +51,6 @@ export function intersect<T, U>(first: T, second: U): T & U {
             (<any>result)[key] = (<any>first)[key];
         }
     });
+
     return result;
 }
