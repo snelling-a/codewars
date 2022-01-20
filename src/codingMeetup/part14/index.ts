@@ -36,6 +36,7 @@ export function orderFood(list: Developer[]) {
         if (meal) {
             const noParamReassign = foodOptions;
             noParamReassign[meal] = (noParamReassign[meal] || 0) + 1;
+
             return noParamReassign;
         }
 

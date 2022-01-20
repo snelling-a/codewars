@@ -16,6 +16,7 @@ Examples
 
 export function order(words: string) {
     const matcher = /\d+/;
+
     return words
         .split(' ')
         .sort(

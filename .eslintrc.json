@@ -47,8 +47,7 @@
         "prettier/prettier": "error",
         "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
         "curly": [2, "all"],
-        "no-shadow": "off",
-        "@typescript-eslint/no-shadow": ["error"]
+        "newline-before-return": "error"
     },
     "settings": {
         "import/parsers": {

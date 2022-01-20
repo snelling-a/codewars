@@ -39,6 +39,7 @@ export function findAdmin(
         if (language === lang && githubAdmin === 'yes') {
             return [...admins, developer];
         }
+
         return admins;
     }, []);
 

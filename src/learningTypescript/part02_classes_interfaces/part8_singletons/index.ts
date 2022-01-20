@@ -35,6 +35,7 @@ export class SingletonCounter {
 
     inc() {
         this.value += 1;
+
         return this.value;
     }
 }

@@ -39,6 +39,7 @@ import { Developer } from '../types';
 export function greetDevelopers(list: Developer[]) {
     return list.map<Developer>((developer) => {
         const { firstName, language } = developer;
+
         return {
             ...developer,
             greeting: `Hi ${firstName}, what do you like the most about ${language}?`,
