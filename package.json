@@ -9,7 +9,10 @@
         "build": "rimraf ./build && tsc -p tsconfig.prod.json",
         "test": "jest",
         "test:watch": "jest --watch",
-        "test:coverage": "rimraf ./coverage && jest --coverage"
+        "test:coverage": "rimraf ./coverage && jest --coverage",
+        "lint": "npx eslint . --ext .ts,.tsx --fix",
+        "prettier:write": "prettier --write './**/*.{ts,tsx,json}'",
+        "prettier:check": "prettier --check './**/*.{ts,tsx,json}'"
     },
     "repository": {
         "type": "git",
