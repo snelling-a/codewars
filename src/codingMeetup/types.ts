@@ -1,12 +1,10 @@
 import { CONTINENTS, FOOD_OPTIONS, LANGUAGE_LIST } from './constants';
 
 export type FoodOptions = {
-    // eslint-disable-next-line no-unused-vars
     [K in typeof FOOD_OPTIONS[number]]?: number;
 };
 
 export type LanguageCounts = {
-    // eslint-disable-next-line no-unused-vars
     [K in typeof LANGUAGE_LIST[number]]?: number;
 };
 
