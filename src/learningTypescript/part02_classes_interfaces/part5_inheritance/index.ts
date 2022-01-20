@@ -48,13 +48,7 @@ export class Animal implements IAnimal {
         public legs: number,
         public species: string,
         public status: string,
-    ) {
-        this.name = name;
-        this.age = age;
-        this.legs = legs;
-        this.species = species;
-        this.status = status;
-    }
+    ) {}
 
     introduce() {
         return `Hello, my name is ${this.name} and I am ${this.age} years old.`;

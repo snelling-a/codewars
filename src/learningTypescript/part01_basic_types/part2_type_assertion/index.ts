@@ -1,7 +1,3 @@
-/* eslint-disable no-empty-function */
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-useless-constructor */
 /* eslint-disable max-classes-per-file */
 /*
 https://www.codewars.com/kata/5916b952e76dc9cbcb000066
@@ -54,7 +50,10 @@ HINT: Try to use double assertion - first convert it to any and then convert it 
 */
 
 export class SuccessServerResult {
-    constructor(public httpCode: number, public resultObject: Object) {}
+    constructor(
+        public httpCode: number,
+        public resultObject: Record<string, unknown>, // originally Object, @typescript-eslint/ban-types
+    ) {}
 }
 
 export class ErrorServerResult {

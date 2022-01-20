@@ -29,11 +29,7 @@ export class Cuboid {
         public length: number,
         public width: number,
         public height: number,
-    ) {
-        this.length = length;
-        this.width = width;
-        this.height = height;
-    }
+    ) {}
 
     public get surfaceArea() {
         return (

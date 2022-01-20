@@ -21,7 +21,6 @@ class Person implements Serializable {
     serialize: () => string;
 
     // @ts-ignore strictPropertyInitialization
-    // eslint-disable-next-line no-unused-vars
     deserialize: (source: string) => void;
 }
 
@@ -50,7 +49,6 @@ class Robot implements Serializable {
     serialize: () => string;
 
     // @ts-ignore strictPropertyInitialization
-    // eslint-disable-next-line no-unused-vars
     deserialize: (source: string) => void;
 }
 

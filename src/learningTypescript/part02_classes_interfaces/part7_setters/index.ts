@@ -35,9 +35,7 @@ export interface ICuboid {
 }
 
 export class Cube implements ICuboid {
-    constructor(public length: number) {
-        this.length = length;
-    }
+    constructor(public length: number) {}
 
     get volume(): number {
         return this.length ** 3;

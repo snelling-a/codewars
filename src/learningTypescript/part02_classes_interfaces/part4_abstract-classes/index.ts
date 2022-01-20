@@ -61,9 +61,8 @@ Your task is to implement these classes. Boa, Parrot and Monkey must convert to 
 */
 
 export abstract class Animal {
-    protected constructor(public value: number) {
-        this.value = value;
-    }
+    /** @param {number} value The length of the animal in parrots. */
+    protected constructor(public value: number) {}
 
     convertTo(someone: Animal): number {
         return someone.value / this.value;

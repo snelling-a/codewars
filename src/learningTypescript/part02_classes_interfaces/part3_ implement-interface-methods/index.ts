@@ -32,11 +32,7 @@ interface IGeometricFigure {
 }
 
 export class Square implements IGeometricFigure {
-    side: number;
-
-    constructor(side: number) {
-        this.side = side;
-    }
+    constructor(readonly side: number) {}
 
     area(): number {
         return this.side ** 2;
@@ -48,11 +44,7 @@ export class Square implements IGeometricFigure {
 }
 
 export class Circle implements IGeometricFigure {
-    radius: number;
-
-    constructor(radius: number) {
-        this.radius = radius;
-    }
+    constructor(readonly radius: number) {}
 
     area(): number {
         return Math.PI * this.radius ** 2;
