@@ -44,7 +44,6 @@
             }
         ],
         "import/prefer-default-export": "off",
-        "no-console": "off",
         "prettier/prettier": "error",
         "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
         "curly": [2, "all"],

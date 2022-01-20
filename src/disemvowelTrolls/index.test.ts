@@ -18,9 +18,6 @@ describe(Disemvowel.name, () => {
 
     it.each([testCase, ...fixedTests])(
         'should take "%s" and return "%s"',
-        (input, output) => {
-            console.log('input, output :>> ', input, output);
-            expect(Disemvowel.disemvowel(input)).toEqual(output);
-        },
+        (input, output) => expect(Disemvowel.disemvowel(input)).toEqual(output),
     );
 });
