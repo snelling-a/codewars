@@ -1,21 +1,27 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable max-classes-per-file */
 import { Serializable } from '.';
 
 function applyMixins(derivedCtor: any, baseCtors: any[]) {
     baseCtors.forEach((baseCtor) => {
         Object.getOwnPropertyNames(baseCtor.prototype).forEach((name) => {
+            // eslint-disable-next-line no-param-reassign
             derivedCtor.prototype[name] = baseCtor.prototype[name];
         });
     });
 }
 
 class Person implements Serializable {
-    constructor(public firstName?: string, public lastName?: string) {}
+    constructor(public firstName?: string, public lastName?: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
     // @ts-ignore strictPropertyInitialization
     serialize: () => string;
 
     // @ts-ignore strictPropertyInitialization
+    // eslint-disable-next-line no-unused-vars
     deserialize: (source: string) => void;
 }
 
@@ -37,12 +43,14 @@ class Robot implements Serializable {
 
     constructor(public name?: string) {
         this.id = Math.random().toString(36).substring(7);
+        this.name = name;
     }
 
     // @ts-ignore strictPropertyInitialization
     serialize: () => string;
 
     // @ts-ignore strictPropertyInitialization
+    // eslint-disable-next-line no-unused-vars
     deserialize: (source: string) => void;
 }
 
