@@ -9,8 +9,7 @@ run into a library that expects a parameter to be either a number or a string. F
  * If 'padding' is a string, then 'padding' is appended to the left side.
  * If 'padding' is a number, then that number of spaces is added to the left side.
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function padLeft(value: string, padding: any) {
+export function padLeft(value: string, padding: unknown) {
     if (typeof padding === 'number') {
         return Array(padding + 1).join(' ') + value;
     }
