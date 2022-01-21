@@ -1,4 +1,5 @@
-import { Cube, Cuboid } from '.';
+import { Cuboid } from '.';
+import { Cube } from './Cube';
 
 describe(`class ${Cuboid.name}`, () => {
     it('should initialize properly and have working getters', () => {

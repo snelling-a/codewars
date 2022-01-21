@@ -1,4 +1,6 @@
-import { Boa, Monkey, Parrot } from '.';
+import { Boa } from './Boa';
+import { Monkey } from './Monkey';
+import { Parrot } from './Parrot';
 
 describe(Boa.name, () => {
     it('should be measured in Monkeys correctly', () => {

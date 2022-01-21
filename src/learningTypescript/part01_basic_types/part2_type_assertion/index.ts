@@ -1,4 +1,3 @@
-/* eslint-disable max-classes-per-file */
 /*
 https://www.codewars.com/kata/5916b952e76dc9cbcb000066
 
@@ -49,16 +48,8 @@ Your task is to find and fix error in function getResult.
 HINT: Try to use double assertion - first convert it to any and then convert it to ErrorServerResult.
 */
 
-export class SuccessServerResult {
-    constructor(
-        public httpCode: number,
-        public resultObject: Record<string, unknown>, // originally Object, @typescript-eslint/ban-types
-    ) {}
-}
-
-export class ErrorServerResult {
-    constructor(public httpCode: number, public message: string) {}
-}
+import { ErrorServerResult } from './ErrorServerResult';
+import { SuccessServerResult } from './SuccessServerResult';
 
 export function getResult(result: SuccessServerResult | ErrorServerResult) {
     if (result.httpCode === 200) {

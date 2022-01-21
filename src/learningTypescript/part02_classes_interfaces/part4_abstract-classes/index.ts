@@ -1,4 +1,3 @@
-/* eslint-disable max-classes-per-file */
 /*
 https://www.codewars.com/kata/590cb67bc69e3a31d0000042
 
@@ -66,23 +65,5 @@ export abstract class Animal {
 
     convertTo(someone: Animal): number {
         return someone.value / this.value;
-    }
-}
-
-export class Boa extends Animal {
-    public constructor() {
-        super(1);
-    }
-}
-
-export class Parrot extends Animal {
-    public constructor() {
-        super(38);
-    }
-}
-
-export class Monkey extends Animal {
-    public constructor() {
-        super(5);
     }
 }

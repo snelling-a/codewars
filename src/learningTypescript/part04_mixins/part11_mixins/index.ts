@@ -73,7 +73,7 @@ You're required to implement mixin Serializable which should contain:
 */
 
 export class Serializable {
-    serialize(): string {
+    public serialize(): string {
         return JSON.stringify(this);
     }
 
