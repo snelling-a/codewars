@@ -44,7 +44,6 @@ Your task is to create function intersect which returns object with properties t
 
 export function intersect<T, U>(first: T, second: U): T & U {
     const result = <T & U>{};
-    // TODO:
 
     return Object.keys(first).reduce((acc, key) => {
         if (second[key as keyof U]) {

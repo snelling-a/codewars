@@ -57,8 +57,6 @@ export function getResult(result: SuccessServerResult | ErrorServerResult) {
         return (result as SuccessServerResult).resultObject;
     }
     // Returning result.message in case of error
-    // FIXME: help TypeScript Compiler to understand that result here
-    // is the instance of ErrorServerResult...
 
     return (result as ErrorServerResult).message;
 }
