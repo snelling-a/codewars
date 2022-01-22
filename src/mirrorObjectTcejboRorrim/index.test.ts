@@ -1,23 +1,23 @@
 import { mirror } from '.';
 
-const style = `style="display: inline-block; transform: scale(-1, 1)"`;
-const log = (m) => console.log(m, ' ', `<span ${style}>${m}</span>`);
-
-// Tests
-describe('mirror', () => {
-    it('basic', () => {
-        const expected = {
-            abc: 'cba',
-            arara: 'arara',
-        };
-        const actual = mirror({
-            abc: undefined,
-            arara: undefined,
-        });
-
-        console.log('Expected');
-        Object.keys(expected).forEach((k) => log(k));
-
-        expect(actual).toEqual (expected);
-    });
+describe(mirror.name, () => {
+    it.each([
+        [
+            {
+                abc: undefined,
+                arara: undefined,
+            },
+            { abc: 'cba', arara: 'arara' },
+        ],
+        [{}, {}],
+        [
+            { 'abc?': undefined, '1 arara 2': undefined },
+            {
+                'abc?': '?cba',
+                '1 arara 2': '2 arara 1',
+            },
+        ],
+    ])('should convert %p to %p', (given, expected) =>
+        expect(mirror(given)).toEqual(expected),
+    );
 });
