@@ -38,11 +38,11 @@ describe('Checking variables', () => {
         expect(var5Octal).toEqual(0o7_4_4);
     });
 
-    it("var6String should be equal to 'Hello, world!'", () => {
+    it('var6String should be equal to "Hello, world!"', () => {
         expect(var6String).toEqual('Hello, world!');
     });
 
-    it("var7Array should be equal to [1, 'test', {a: 3}, 4, 5]", () => {
+    it('var7Array should be equal to [1, "test", {a: 3}, 4, 5]', () => {
         expect(var7Array).toEqual([1, 'test', { a: 3 }, 4, 5]);
     });
 
@@ -50,7 +50,7 @@ describe('Checking variables', () => {
         expect(var8NumericArray).toEqual([1, 2, 3, 4, 5]);
     });
 
-    it("var9Tuple should be equal to ['key', 12345]", () => {
+    it('var9Tuple should be equal to ["key", 12345]', () => {
         expect(var9Tuple).toEqual(['key', 12_345]);
     });
 
@@ -58,7 +58,7 @@ describe('Checking variables', () => {
         expect(var10Enum).toEqual(Color.Blue);
     });
 
-    it("var11ArrayOfAny should be equal to [1, 'test', {a: 3}, 4, 5]", () => {
+    it('var11ArrayOfAny should be equal to [1, "test", {a: 3}, 4, 5]', () => {
         expect(var11ArrayOfAny).toEqual([1, 'test', { a: 3 }, 4, 5]);
     });
 

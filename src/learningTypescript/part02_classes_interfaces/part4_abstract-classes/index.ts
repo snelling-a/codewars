@@ -1,4 +1,3 @@
-/* eslint-disable max-classes-per-file */
 /*
 https://www.codewars.com/kata/590cb67bc69e3a31d0000042
 
@@ -61,29 +60,10 @@ Your task is to implement these classes. Boa, Parrot and Monkey must convert to 
 */
 
 export abstract class Animal {
-    protected constructor(public value: number) {
-        this.value = value;
-    }
+    /** @param {number} value The length of the animal in parrots. */
+    protected constructor(public value: number) {}
 
     convertTo(someone: Animal): number {
         return someone.value / this.value;
-    }
-}
-
-export class Boa extends Animal {
-    public constructor() {
-        super(1);
-    }
-}
-
-export class Parrot extends Animal {
-    public constructor() {
-        super(38);
-    }
-}
-
-export class Monkey extends Animal {
-    public constructor() {
-        super(5);
     }
 }

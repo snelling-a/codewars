@@ -1,14 +1,17 @@
-import { getResult, ErrorServerResult, SuccessServerResult } from '.';
+import { getResult } from '.';
+import { ErrorServerResult } from './ErrorServerResult';
+import { SuccessServerResult } from './SuccessServerResult';
 
-describe('getResult', () => {
-    it('should return correct results for SuccessServerResult', () => {
+describe(`${getResult.name}`, () => {
+    it(`should return correct results for ${SuccessServerResult.name}`, () => {
         const message = { message: 'Hello, world!' };
         const success = new SuccessServerResult(200, message);
         expect(getResult(success)).toEqual(message);
     });
-    it('should return correct results for ErrorServerResult', () => {
+
+    it(`should return correct results for ${ErrorServerResult.name}`, () => {
         const message = 'Not found';
         const error = new ErrorServerResult(404, message);
-        expect(getResult(error as any)).toEqual(message);
+        expect(getResult(error)).toEqual(message);
     });
 });

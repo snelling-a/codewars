@@ -1,4 +1,5 @@
-import { Circle, Square } from '.';
+import { Circle } from './Circle';
+import { Square } from './Square';
 
 const randomValues = Array(100)
     .fill(null)

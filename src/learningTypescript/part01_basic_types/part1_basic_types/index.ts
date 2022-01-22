@@ -42,11 +42,8 @@ export const var9Tuple: [string, number] = ['key', 12_345];
 /* Enums */
 // Export var10Enum variable with value Color.Blue from enum export enum Color {Red = 1, Green = 2, Blue = 4}.
 export enum Color {
-    // eslint-disable-next-line no-unused-vars
     Red = 1,
-    // eslint-disable-next-line no-unused-vars
     Green = 2,
-    // eslint-disable-next-line no-unused-vars
     Blue = 4,
 }
 export const var10Enum = Color.Blue;
@@ -60,7 +57,6 @@ export const var11ArrayOfAny: Array<unknown> = [1, 'test', { a: 3 }, 4, 5];
 
 /* Void */
 // Export var12VoidFunction function that returns void.
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 export const var12VoidFunction = () => {};
 
 /* Null and Undefined */

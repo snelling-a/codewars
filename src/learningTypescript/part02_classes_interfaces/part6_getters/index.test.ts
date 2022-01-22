@@ -1,4 +1,5 @@
-import { Cube, Cuboid } from '.';
+import { Cuboid } from '.';
+import { Cube } from './Cube';
 
 describe(`class ${Cuboid.name}`, () => {
     it('should initialize properly and have working getters', () => {
@@ -27,7 +28,7 @@ describe(`class ${Cuboid.name}`, () => {
     });
 });
 
-describe(`class ${Cube.name} extends Cuboid`, () => {
+describe(`class ${Cube.name} extends ${Cuboid.name}`, () => {
     it('should initialize properly and have the same getters as the parent class', () => {
         const cube = new Cube(1);
         expect(cube.length).toEqual(1);

@@ -1,4 +1,3 @@
-/* eslint-disable max-classes-per-file */
 /*
 https://www.codewars.com/kata/599d636e607719edf600010a
 
@@ -29,11 +28,7 @@ export class Cuboid {
         public length: number,
         public width: number,
         public height: number,
-    ) {
-        this.length = length;
-        this.width = width;
-        this.height = height;
-    }
+    ) {}
 
     public get surfaceArea() {
         return (
@@ -46,11 +41,5 @@ export class Cuboid {
 
     public get volume() {
         return this.length * this.width * this.height;
-    }
-}
-
-export class Cube extends Cuboid {
-    constructor(length: number) {
-        super(length, length, length);
     }
 }

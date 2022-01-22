@@ -1,4 +1,7 @@
-import { Animal, Cat, Dog, Shark } from '.';
+import { Animal } from '.';
+import { Cat } from './Cat';
+import { Dog } from './Dog';
+import { Shark } from './Shark';
 
 describe(`The ${Animal.name} class`, () => {
     it('should construct an object properly', () => {
