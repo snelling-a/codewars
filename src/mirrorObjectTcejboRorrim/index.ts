@@ -17,4 +17,8 @@ xyz: zyx
 "You cannot change the original object, because if you did that the reflection would change."
 */
 
-export const mirror = (obj) => {};
+export const mirror = (obj: Record<string, string | undefined>) =>
+    Object.keys(obj).reduce(
+        (acc, key) => ({ ...acc, [key]: key.split('').reverse().join('') }),
+        {},
+    );
