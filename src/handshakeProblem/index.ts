@@ -13,12 +13,14 @@ to perform these handshakes (a pair of farmers handshake only once).
 */
 
 export function getParticipants(handshakes: number): number {
-    let participants = 1;
-    let shakes = handshakes;
-    while (shakes > 0) {
-        shakes -= participants;
-        participants += 1;
-    }
+    // let participants = 1;
+    // let shakes = handshakes;
+    // while (shakes > 0) {
+    //     shakes -= participants;
+    //     participants += 1;
+    // }
+    // return participants;
 
-    return participants;
+    // https://qr.ae/pGBuEX
+    return Math.ceil((1 + Math.sqrt(8 * handshakes + 1)) / 2);
 }
