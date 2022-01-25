@@ -28,8 +28,7 @@ NOTE: For coding purposes you have to use ASCII characters . and -, not Unicode 
 
 All the test strings would contain valid Morse code, so you may skip checking for errors and exceptions. In C#, tests will fail if the solution code throws an exception, please keep that in mind. This is mostly because otherwise the engine would simply ignore the tests, resulting in a "valid" solution.
 */
-
-import { MORSE_CODE } from '../morseCodeDIctionary';
+import { MORSE_CODE } from '../morseCodeDictionary';
 
 export function decodeMorse(morseCode: string): string {
     return morseCode
