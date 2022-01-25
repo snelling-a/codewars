@@ -50,9 +50,22 @@ so you may skip checking for errors and exceptions, just do your best in figurin
 import { MORSE_CODE } from '../morseCodeDictionary';
 
 export const decodeBits = (bits: string) => {
-    // ToDo: Accept 0's and 1's, return dots, dashes and spaces
+    return bits
+        .replace(/00000000000000/g, '  ')
+        .replace(/000000/g, ' ')
+        .replace(/111111/g, '-')
+        .replace(/11/g, '.')
+        .replace(/00/g, '');
 };
 
 export const decodeMorse = (morseCode: string) => {
-    // ToDo: Accept dots, dashes and spaces, return human-readable message
+    return morseCode
+        .split('  ')
+        .map((word) =>
+            word
+                .split(' ')
+                .map((letter) => MORSE_CODE[letter])
+                .join(''),
+        )
+        .join(' ');
 };
