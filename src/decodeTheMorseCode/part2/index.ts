@@ -49,17 +49,25 @@ so you may skip checking for errors and exceptions, just do your best in figurin
 
 import { MORSE_CODE } from '../morseCodeDictionary';
 
+const getTimeUnit = (bitsTrimmed: string) =>
+    Math.min(...(bitsTrimmed.match(/1+|0+/g) || []).map((el) => el.length));
+
+const trimBits = (bits: string) => bits.replace(/^0+|0+$/g, '');
+
 export const decodeBits = (bits: string) => {
-    return bits
-        .replace(/00000000000000/g, '  ')
-        .replace(/000000/g, ' ')
-        .replace(/111111/g, '-')
-        .replace(/11/g, '.')
-        .replace(/00/g, '');
+    const bitsTrimmed = trimBits(bits);
+    const timeUnit = getTimeUnit(bitsTrimmed);
+
+    return bitsTrimmed
+        .replace(new RegExp(`(0000000){${timeUnit}}`, 'g'), '  ')
+        .replace(new RegExp(`(000){${timeUnit}}`, 'g'), ' ')
+        .replace(new RegExp(`(111){${timeUnit}}`, 'g'), '-')
+        .replace(new RegExp(`(1){${timeUnit}}`, 'g'), '.')
+        .replace(new RegExp(`(0){${timeUnit}}`, 'g'), '');
 };
 
-export const decodeMorse = (morseCode: string) => {
-    return morseCode
+export const decodeMorse = (morseCode: string) =>
+    morseCode
         .split('  ')
         .map((word) =>
             word
@@ -68,4 +76,3 @@ export const decodeMorse = (morseCode: string) => {
                 .join(''),
         )
         .join(' ');
-};
