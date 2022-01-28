@@ -59,4 +59,8 @@ describe(decodeMorse.name, () => {
             expect(decodeMorse(decodeBits(bits))).toBe(characters),
     );
 
+    it.each(['2', '3', '4', '5', '00015001100', 'a'])(
+        `should return '' if input string has characters other than 0 or 1: %s`,
+        (string) => expect(decodeMorse(decodeBits(string))).toBe(''),
+    );
 });
