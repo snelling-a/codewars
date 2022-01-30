@@ -11,4 +11,9 @@ Examples:
 The parameter of accum is a string which includes only letters from a..z and A..Z.
 */
 
-export function accum(s: string): string {}
+export function accum(s: string): string {
+    return s
+        .split('')
+        .map((c, i) => c.toUpperCase() + c.toLowerCase().repeat(i))
+        .join('-');
+}
