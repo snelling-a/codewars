@@ -26,5 +26,20 @@ wave("hello") => []string{"Hello", "hEllo", "heLlo", "helLo", "hellO"}
 */
 
 export function wave(str: string): Array<string> {
-    // Good luck
+    const strLength = Array(str.length).fill(null);
+    const makeWave = strLength.reduce((acc, cur, index) => {
+        if (str.charAt(index) === ' ') {
+            return acc;
+        }
+
+        const start = str.slice(0, index);
+        const cap = str.charAt(index).toUpperCase();
+        const end = str.slice(index + 1);
+
+        const theWave = start + cap + end;
+
+        return [...acc, theWave];
+    }, []);
+
+    return makeWave;
 }
