@@ -27,19 +27,19 @@ wave("hello") => []string{"Hello", "hEllo", "heLlo", "helLo", "hellO"}
 
 export function wave(str: string): Array<string> {
     const strLength = Array(str.length).fill(null);
-    const makeWave = strLength.reduce((acc, cur, index) => {
+
+    return strLength.reduce<string[]>((acc, _, index) => {
         if (str.charAt(index) === ' ') {
             return acc;
         }
 
-        const start = str.slice(0, index);
-        const cap = str.charAt(index).toUpperCase();
-        const end = str.slice(index + 1);
+        const beforeCapitalLetter = str.slice(0, index);
+        const capitalLetter = str.charAt(index).toUpperCase();
+        const afterCapitalLetter = str.slice(index + 1);
 
-        const theWave = start + cap + end;
+        const strWithCapitalLetter =
+            beforeCapitalLetter + capitalLetter + afterCapitalLetter;
 
-        return [...acc, theWave];
+        return [...acc, strWithCapitalLetter];
     }, []);
-
-    return makeWave;
 }
