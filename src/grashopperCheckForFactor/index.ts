@@ -18,5 +18,5 @@ Note: base is a non-negative number, factor is a positive number.
 */
 
 export function checkForFactor(base: number, factor: number) {
-    // your code here
+    return base % factor === 0;
 }
