@@ -34,4 +34,68 @@ N = 5 Output: [[1,2,3,4,5],[16,17,18,19,6],[15,24,25,20,7],[14,23,22,21,8],[13,1
 13  12  11  10  9
 */
 
-export function createSpiral(N: number) {}
+export function createSpiral(N: number) {
+    if (!Number.isInteger(N) || N < 1) {
+        return [];
+    }
+    const returnArray = Array(N)
+        .fill(0)
+        .map(() => Array(N).fill(0));
+
+    const counter = { x: 0, y: 0, count: 1, direction: 'right' };
+    while (counter.count <= N ** 2) {
+        returnArray[counter.x][counter.y] = counter.count;
+
+        switch (counter.direction) {
+            case 'right':
+                if (
+                    counter.y + 1 < N &&
+                    returnArray[counter.x][counter.y + 1] === 0
+                ) {
+                    counter.y += 1;
+                } else {
+                    counter.direction = 'down';
+                    counter.x += 1;
+                }
+                break;
+            case 'down':
+                if (
+                    counter.x + 1 < N &&
+                    returnArray[counter.x + 1][counter.y] === 0
+                ) {
+                    counter.x += 1;
+                } else {
+                    counter.direction = 'left';
+                    counter.y -= 1;
+                }
+                break;
+            case 'left':
+                if (
+                    counter.y - 1 >= 0 &&
+                    returnArray[counter.x][counter.y - 1] === 0
+                ) {
+                    counter.y -= 1;
+                } else {
+                    counter.direction = 'up';
+                    counter.x -= 1;
+                }
+                break;
+            case 'up':
+                if (
+                    counter.x - 1 >= 0 &&
+                    returnArray[counter.x - 1][counter.y] === 0
+                ) {
+                    counter.x -= 1;
+                } else {
+                    counter.direction = 'right';
+                    counter.y += 1;
+                }
+                break;
+            default:
+                break;
+        }
+        counter.count += 1;
+    }
+
+    return returnArray;
+}
