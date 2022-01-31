@@ -34,12 +34,15 @@ N = 5 Output: [[1,2,3,4,5],[16,17,18,19,6],[15,24,25,20,7],[14,23,22,21,8],[13,1
 13  12  11  10  9
 */
 
+const create2dArray = (height: number, width = height, fill: unknown = 0) =>
+    Array.from({ length: height }, () => new Array(width).fill(fill));
+
 export function createSpiral(N: unknown) {
     if (!Number.isInteger(N) || typeof N !== 'number' || N < 1) {
         return [];
     }
 
-    const returnArray = Array.from({ length: N }, () => new Array(N).fill(0));
+    const returnArray = create2dArray(N);
 
     const counter = { x: 0, y: 0, count: 1, direction: 'right' };
     while (counter.count <= N ** 2) {
