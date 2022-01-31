@@ -45,58 +45,48 @@ export function createSpiral(N: unknown) {
     const returnArray = create2dArray(N);
 
     const counter = { x: 0, y: 0, count: 1, direction: 'right' };
-    while (counter.count <= N ** 2) {
-        returnArray[counter.x][counter.y] = counter.count;
+    let { x, y, count, direction } = counter;
 
-        switch (counter.direction) {
+    while (count <= N ** 2) {
+        returnArray[x][y] = count;
+
+        switch (direction) {
             case 'right':
-                if (
-                    counter.y + 1 < N &&
-                    returnArray[counter.x][counter.y + 1] === 0
-                ) {
-                    counter.y += 1;
+                if (y + 1 < N && returnArray[x][y + 1] === 0) {
+                    y += 1;
                 } else {
-                    counter.direction = 'down';
-                    counter.x += 1;
+                    direction = 'down';
+                    x += 1;
                 }
                 break;
             case 'down':
-                if (
-                    counter.x + 1 < N &&
-                    returnArray[counter.x + 1][counter.y] === 0
-                ) {
-                    counter.x += 1;
+                if (x + 1 < N && returnArray[x + 1][y] === 0) {
+                    x += 1;
                 } else {
-                    counter.direction = 'left';
-                    counter.y -= 1;
+                    direction = 'left';
+                    y -= 1;
                 }
                 break;
             case 'left':
-                if (
-                    counter.y - 1 >= 0 &&
-                    returnArray[counter.x][counter.y - 1] === 0
-                ) {
-                    counter.y -= 1;
+                if (y - 1 >= 0 && returnArray[x][y - 1] === 0) {
+                    y -= 1;
                 } else {
-                    counter.direction = 'up';
-                    counter.x -= 1;
+                    direction = 'up';
+                    x -= 1;
                 }
                 break;
             case 'up':
-                if (
-                    counter.x - 1 >= 0 &&
-                    returnArray[counter.x - 1][counter.y] === 0
-                ) {
-                    counter.x -= 1;
+                if (x - 1 >= 0 && returnArray[x - 1][y] === 0) {
+                    x -= 1;
                 } else {
-                    counter.direction = 'right';
-                    counter.y += 1;
+                    direction = 'right';
+                    y += 1;
                 }
                 break;
             default:
                 break;
         }
-        counter.count += 1;
+        count += 1;
     }
 
     return returnArray;
