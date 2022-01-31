@@ -14,5 +14,8 @@ Should return: 160 (the only even number)
 */
 
 export function findOutlier(integers: number[]): number {
-    // your code here
+    const evens = integers.filter((n) => n % 2 === 0);
+    const odds = integers.filter((n) => n % 2 !== 0);
+
+    return evens.length === 1 ? Number(evens) : Number(odds);
 }
