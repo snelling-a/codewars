@@ -26,7 +26,15 @@ describe(sumOfIntervals.name, () => {
                 ],
                 7,
             ],
-        ])('should take intervals %s and return %d', (intervals, expected) =>
+            [
+                [
+                    [1, 5],
+                    [10, 15],
+                    [-1, 3],
+                ],
+                11,
+            ],
+        ])('should take intervals %j and return %d', (intervals, expected) =>
             expect(sumOfIntervals(intervals)).toEqual(expected),
         );
     });
