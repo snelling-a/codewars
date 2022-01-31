@@ -25,11 +25,11 @@ sumOfIntervals([[1, 5]]) // => 4
 */
 
 export function sumOfIntervals(intervals: [number, number][]) {
-    return intervals.reduce<Map<string, number>>((acc, [a, b]) => {
+    return intervals.reduce<Set<number>>((acc, [a, b]) => {
         for (let i = a; i < b; i++) {
-            acc.set(`${i}`, 1);
+            acc.add(i);
         }
 
         return acc;
-    }, new Map()).size;
+    }, new Set()).size;
 }
