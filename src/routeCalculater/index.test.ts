@@ -13,6 +13,7 @@ describe('operate', () => {
         ['1-1', 0],
         ['2$2', 1],
         ['2*2', 4],
+        ['10$2', 5],
     ])(
         'should perform simple single operations: "%s" => %d',
         (input, expected) => expect(calculate(input)).toEqual(expected),
@@ -46,7 +47,7 @@ describe('operate', () => {
         (input, expected) => expect(calculate(input)).toEqual(expected),
     );
 
-    it.each(['5*6$2&5-10', '5/10', 'p', '9^9'])(
+    it.each(['5*6$2&5-10', '5/10', 'p', '9^9', '10-9p'])(
         'should throw input error for bad inputs: "%s"',
         (input) => expect(calculate(input)).toEqual('400: Bad request'),
     );
