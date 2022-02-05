@@ -46,5 +46,41 @@ NOTE: The pointer of the interpreter always starts from the first (leftmost) cel
 */
 
 export function interpreter(code: string, tape: string): string {
-    // Implement your interpreter here
+    const codeArray = code.split('');
+
+    return codeArray
+        .reduce(
+            (acc, curr, codeIndex, arr) => {
+                if (
+                    acc.tapeIndex < 0 ||
+                    acc.tapeIndex >= acc.tapeArray.length
+                ) {
+                    return acc;
+                }
+
+                switch (curr) {
+                    case '>': // move pointer right 1 cell
+                        acc.tapeIndex += 1;
+                        break;
+                    case '<': // move pointer left 1 cell
+                        acc.tapeIndex -= 1;
+                        break;
+                    case '*': // flip bit at current cell
+                        acc.tapeArray[acc.tapeIndex] =
+                            acc.tapeArray[acc.tapeIndex] === '0' ? '1' : '0';
+                        // acc.tapeIndex += 1;
+                        break;
+                    case '[': // jump past matching ] if value at current cell is 0
+                        break;
+                    case ']': // jump back to matching [ (if value at current cell is nonzero)
+                        break;
+                    default:
+                        break;
+                }
+
+                return acc;
+            },
+            { tapeArray: tape.split(''), tapeIndex: 0 },
+        )
+        .tapeArray.join('');
 }
