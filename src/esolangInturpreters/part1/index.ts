@@ -35,6 +35,27 @@ interpreter as you implement it to remind yourself of what is happening within t
 */
 
 export function myFirstInterpreter(code: string): string {
-    // Implement your interpreter here
-    return '';
+    const miniStringFuckCodeParser = code.split('').reduce(
+        (acc, curr) => {
+            if (acc.memory >= 256) {
+                acc.memory = 0;
+            }
+
+            switch (curr) {
+                case '+':
+                    acc.memory += 1;
+                    break;
+                case '.':
+                    acc.output += String.fromCharCode(acc.memory);
+                    break;
+                default:
+                    break;
+            }
+
+            return acc;
+        },
+        { memory: 0, output: '' },
+    );
+
+    return miniStringFuckCodeParser.output;
 }
