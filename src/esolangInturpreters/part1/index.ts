@@ -37,13 +37,9 @@ interpreter as you implement it to remind yourself of what is happening within t
 export function myFirstInterpreter(code: string): string {
     const miniStringFuckCodeParser = code.split('').reduce(
         (acc, curr) => {
-            if (acc.memory >= 256) {
-                acc.memory = 0;
-            }
-
             switch (curr) {
                 case '+':
-                    acc.memory += 1;
+                    acc.memory = (acc.memory + 1) % 256;
                     break;
                 case '.':
                     acc.output += String.fromCharCode(acc.memory);
