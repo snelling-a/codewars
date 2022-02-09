@@ -45,42 +45,80 @@ For example, if the tape in your interpreter ends up being [1, 1, 1, 1, 1] then 
 NOTE: The pointer of the interpreter always starts from the first (leftmost) cell of the tape, same as in Brainfuck.
 */
 
+type MoveLeftOrRight = '>' | '<';
+type Brackets = '[' | ']';
+type Code = MoveLeftOrRight | '*' | Brackets;
+type Bit = '0' | '1';
+
+const isValidIndex = (index: number, array: unknown[]) =>
+    index >= 0 && index < array.length;
+
+const flipBit = (bit: Bit) => (bit === '0' ? '1' : '0');
+const moveLeftOrRight = (command: MoveLeftOrRight) =>
+    command === '>' ? 1 : -1;
+
 export function interpreter(code: string, tape: string): string {
     const codeArray = code.split('');
+    // You may assume that all input strings for tape will be non-empty and will only contain "0"s and "1"s.
+    const tapeArray = tape.split('') as Bit[];
 
-    return codeArray
-        .reduce(
-            (acc, curr, codeIndex, arr) => {
-                if (
-                    acc.tapeIndex < 0 ||
-                    acc.tapeIndex >= acc.tapeArray.length
-                ) {
-                    return acc;
+    let stack: Code[] = [];
+    let pointer = 0;
+    let codeIndex = 0;
+
+    while (
+        isValidIndex(pointer, tapeArray) &&
+        isValidIndex(codeIndex, codeArray)
+    ) {
+        const currentBit = tapeArray[pointer];
+        const command = codeArray[codeIndex];
+
+        // Smallfuck terminates when all commands have been considered from left to right
+        if (stack.length === codeArray.length) {
+            break;
+        }
+
+        const getClosingBracketIndex = codeArray.indexOf(']', codeIndex);
+        const getOpeningBracketIndex = codeArray.lastIndexOf('[', codeIndex);
+
+        switch (command) {
+            case '>':
+            case '<':
+                // > - Move pointer to the right (by 1 cell)
+                // < - Move pointer to the left (by 1 cell)
+                pointer += moveLeftOrRight(command);
+                // stack.push(command);
+                break;
+            case '*':
+                // * - Flip the bit at the current cell
+                tapeArray[pointer] = flipBit(currentBit);
+                stack.push(command);
+                break;
+            case '[':
+                // [ - Jump past matching ] if value at current cell is 0
+                if (currentBit === '0') {
+                    const closingBracket = getClosingBracketIndex;
+                    codeIndex = closingBracket + 1;
                 }
-
-                switch (curr) {
-                    case '>': // move pointer right 1 cell
-                        acc.tapeIndex += 1;
-                        break;
-                    case '<': // move pointer left 1 cell
-                        acc.tapeIndex -= 1;
-                        break;
-                    case '*': // flip bit at current cell
-                        acc.tapeArray[acc.tapeIndex] =
-                            acc.tapeArray[acc.tapeIndex] === '0' ? '1' : '0';
-                        // acc.tapeIndex += 1;
-                        break;
-                    case '[': // jump past matching ] if value at current cell is 0
-                        break;
-                    case ']': // jump back to matching [ (if value at current cell is nonzero)
-                        break;
-                    default:
-                        break;
+                stack.push(command);
+                break;
+            case ']':
+                // ] - Jump back to matching [ (if value at current cell is nonzero)
+                if (currentBit === '1') {
+                    const openingBracket = getOpeningBracketIndex;
+                    codeIndex = openingBracket;
+                    stack = stack.slice(0, openingBracket);
+                    break;
                 }
+                stack.push(command);
+                break;
+            default:
+                // Your interpreter should simply ignore any non-command characters.
+                break;
+        }
 
-                return acc;
-            },
-            { tapeArray: tape.split(''), tapeIndex: 0 },
-        )
-        .tapeArray.join('');
+        codeIndex += 1;
+    }
+
+    return tapeArray.join('');
 }
