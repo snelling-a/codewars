@@ -45,20 +45,25 @@ For example, if the tape in your interpreter ends up being [1, 1, 1, 1, 1] then 
 NOTE: The pointer of the interpreter always starts from the first (leftmost) cell of the tape, same as in Brainfuck.
 */
 
-type MoveLeftOrRight = '>' | '<';
-type Brackets = '[' | ']';
-type Code = MoveLeftOrRight | '*' | Brackets;
-type Bit = '0' | '1';
+import { SmallfuckInterpreter } from './SmallfuckInterpreter';
 
-const isValidIndex = (index: number, array: unknown[]) =>
-    index >= 0 && index < array.length;
+// type MoveLeftOrRight = '>' | '<';
+// type Brackets = '[' | ']';
+// type Code = MoveLeftOrRight | '*' | Brackets;
+// type Bit = '0' | '1';
 
-const flipBit = (bit: Bit) => (bit === '0' ? '1' : '0');
-const moveLeftOrRight = (command: MoveLeftOrRight) =>
-    command === '>' ? 1 : -1;
+// const isValidIndex = (index: number, array: unknown[]) =>
+//     index >= 0 && index < array.length;
+
+// const flipBit = (bit: Bit) => (bit === '0' ? '1' : '0');
+// const moveLeftOrRight = (command: MoveLeftOrRight) =>
+//     command === '>' ? 1 : -1;
 
 export function interpreter(code: string, tape: string): string {
-    const codeArray = code.split('');
+    const smallfuckInterpreter = new SmallfuckInterpreter(code, tape);
+
+    return smallfuckInterpreter.interpret();
+    /* const codeArray = code.split('');
     // You may assume that all input strings for tape will be non-empty and will only contain "0"s and "1"s.
     const tapeArray = tape.split('') as Bit[];
 
@@ -120,5 +125,5 @@ export function interpreter(code: string, tape: string): string {
         codeIndex += 1;
     }
 
-    return tapeArray.join('');
+    return tapeArray.join(''); */
 }
