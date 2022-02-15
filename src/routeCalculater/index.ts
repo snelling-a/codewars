@@ -39,79 +39,10 @@ Further Notes - Parameters outside of this challenge:
     You may have to deal with floats
 */
 
-const operatorsByPriority = ['$', '*', '-', '+'] as const;
-
-type Operators = typeof operatorsByPriority[number];
-
-const validateInput = (input: string): boolean => {
-    const badInputRegex = /[^.\d+\-*$]/;
-
-    return badInputRegex.test(input);
-};
-
-const useOperator = (input: string, operator: '+' | '-' | '*' | '$') => {
-    const { source: floatRegex } = /[-]?(\d*)\.?(\d*)/;
-    const operationRegex = new RegExp(
-        `((?<num1>${floatRegex}))[${operator}]((?<num2>${floatRegex}))`,
-        'g',
-    );
-    const operation = operationRegex.exec(input);
-
-    if (!operation?.groups) {
-        return '';
-    }
-
-    const { num1, num2 } = operation.groups;
-
-    switch (operator) {
-        case '+':
-            return input.replace(
-                operation[0],
-                (Number(num1) + Number(num2)).toString(),
-            );
-        case '-':
-            return input.replace(
-                operation[0],
-                (Number(num1) - Number(num2)).toString(),
-            );
-        case '*':
-            return input.replace(
-                operation[0],
-                (Number(num1) * Number(num2)).toString(),
-            );
-        case '$':
-            return input.replace(
-                operation[0],
-                (Number(num1) / Number(num2)).toString(),
-            );
-        default:
-            return '';
-    }
-};
-
-const sortOperators = (operators: Operators[]): Operators[] =>
-    operators.sort(
-        (a, b) =>
-            operatorsByPriority.indexOf(a) - operatorsByPriority.indexOf(b),
-    );
+import { RouteCalculator } from './RouteCalculator';
 
 export const calculate = (sum: string) => {
-    if (validateInput(sum)) {
-        return '400: Bad request';
-    }
+    const routeCalculator = new RouteCalculator(sum);
 
-    const operators = sum.match(/[+\-*$]/g) as Operators[];
-
-    if (!operators) {
-        return Number(sum);
-    }
-
-    const sortedOperators = sortOperators(operators);
-
-    const finalSumString = sortedOperators.reduce(
-        (acc, operator) => useOperator(acc, operator),
-        sum,
-    );
-
-    return Number(finalSumString);
+    return routeCalculator.calculate();
 };
