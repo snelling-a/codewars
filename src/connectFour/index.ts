@@ -75,17 +75,27 @@ export class Connect4 {
         return this.grid[0][col] !== 0;
     }
 
-    // TODO: check that values are in a row
-    private checkVerticalWin(col: number) {
-        const cols = this.grid.map((row) => row[col]);
-        const colsCount = cols.reduce<number>(
-            (acc, val) => acc + (val === this.currentPlayer ? 1 : 0),
+    private checkVerticalWin(column: number) {
+        const currentColumn = this.grid.map((row) => row[column]);
+
+        const currentColumnCount = currentColumn.reduce<number>(
+            (acc, val, index, arr) => {
+                if (
+                    this.spaceBelongsToCurrentPlayer(val) &&
+                    this.beforeAndAfterBelongToCurrentPlayer(index, arr)
+                ) {
+                    return acc + 1;
+                }
+
+                return acc;
+            },
             0,
         );
 
-        return colsCount >= 4;
+        return currentColumnCount === 4;
     }
 
+    // TODO: check that values are in a row
     private checkHorizontalWin() {
         const rowWins = this.grid.map((row) =>
             row.reduce<number>(
@@ -97,13 +107,28 @@ export class Connect4 {
         return rowWins.some((rowWin) => rowWin >= 4);
     }
 
+    private spaceBelongsToCurrentPlayer(val: number) {
+        return val === this.currentPlayer;
+    }
+
+    private beforeAndAfterBelongToCurrentPlayer(index: number, arr: number[]) {
+        const before = arr[index - 1]
+            ? arr[index - 1] === this.currentPlayer
+            : true;
+        const after = arr[index + 1]
+            ? arr[index + 1] === this.currentPlayer
+            : true;
+
+        return before && after;
+    }
+
     private checkDiagonalWin() {
         // TODO
     }
 
-    private checkWin(col: number) {
+    private checkWin(column: number) {
         return (
-            this.checkVerticalWin(col) ||
+            this.checkVerticalWin(column) ||
             this.checkHorizontalWin() ||
             this.checkDiagonalWin()
         );
