@@ -20,11 +20,92 @@ Rules
 */
 
 export class Connect4 {
-    constructor() {
-        // Good luck
+    private grid: (0 | 1 | 2)[][] = new Array(6)
+        .fill(0)
+        .map(() => new Array(7).fill(0));
+
+    private currentPlayer: 1 | 2 = 2;
+
+    private changePlayer() {
+        this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
     }
 
+    private currentPlayerHasATurn() {
+        return `Player ${this.currentPlayer} has a turn`;
+    }
+
+    private currentPlayerHasWon() {
+        return `Player ${this.currentPlayer} wins!`;
+    }
+
+    private gameIsFinished = false;
+
+    // constructor() {}
+
     play(col: number): string {
-        // Good luck
+        if (this.gameIsFinished) {
+            return 'Game has finished!';
+        }
+
+        this.changePlayer();
+
+        if (this.checkColumnFull(col)) {
+            this.changePlayer();
+
+            return 'Column full!';
+        }
+
+        for (let row = this.grid.length - 1; row >= 0; row--) {
+            if (this.grid[row][col] === 0) {
+                this.grid[row][col] = this.currentPlayer;
+                break;
+            }
+        }
+
+        if (this.checkWin(col)) {
+            this.gameIsFinished = true;
+
+            return this.currentPlayerHasWon();
+        }
+
+        return this.currentPlayerHasATurn();
+    }
+
+    private checkColumnFull(col: number) {
+        return this.grid[0][col] !== 0;
+    }
+
+    // TODO: check that values are in a row
+    private checkVerticalWin(col: number) {
+        const cols = this.grid.map((row) => row[col]);
+        const colsCount = cols.reduce<number>(
+            (acc, val) => acc + (val === this.currentPlayer ? 1 : 0),
+            0,
+        );
+
+        return colsCount >= 4;
+    }
+
+    private checkHorizontalWin() {
+        const rowWins = this.grid.map((row) =>
+            row.reduce<number>(
+                (acc, val) => acc + (val === this.currentPlayer ? 1 : 0),
+                0,
+            ),
+        );
+
+        return rowWins.some((rowWin) => rowWin >= 4);
+    }
+
+    private checkDiagonalWin() {
+        // TODO
+    }
+
+    private checkWin(col: number) {
+        return (
+            this.checkVerticalWin(col) ||
+            this.checkHorizontalWin() ||
+            this.checkDiagonalWin()
+        );
     }
 }
