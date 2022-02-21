@@ -97,6 +97,18 @@ describe(Connect4.name, () => {
                     { move: 3, returnValue: 'Player 1 wins!' },
                 ],
             },
+            {
+                test: "checkHorizontalWin doesn't give false positives",
+                game: [
+                    { move: 0, returnValue: 'Player 1 has a turn' },
+                    { move: 0, returnValue: 'Player 2 has a turn' },
+                    { move: 1, returnValue: 'Player 1 has a turn' },
+                    { move: 1, returnValue: 'Player 2 has a turn' },
+                    { move: 2, returnValue: 'Player 1 has a turn' },
+                    { move: 3, returnValue: 'Player 2 has a turn' },
+                    { move: 4, returnValue: 'Player 1 has a turn' },
+                ],
+            },
         ])(testName, ({ game }) => {
             testFunction(game);
         });
