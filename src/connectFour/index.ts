@@ -89,6 +89,41 @@ export class Connect4 {
         return rowWins.some((rowWin) => rowWin === 4);
     }
 
+    private checkDiagonalWin() {
+        const diagonals = [
+            ...this.getDiagonals(true),
+            ...this.getDiagonals(false),
+        ].filter((diagonal) => diagonal.length >= 4);
+
+        const diagonalWins = diagonals.map((diagonal) =>
+            this.count4InARow(diagonal),
+        );
+
+        return diagonalWins.some((diagonalWin) => diagonalWin === 4);
+    }
+
+    private getDiagonals(bottomToTop: boolean) {
+        const YLength = this.grid.length;
+        const XLength = this.grid[0].length;
+        const maxLength = Math.max(XLength, YLength);
+        let temp;
+        const returnArray = [];
+        for (let k = 0; k <= 2 * (maxLength - 1); ++k) {
+            temp = [];
+            for (let y = YLength - 1; y >= 0; --y) {
+                const x = k - (bottomToTop ? YLength - y : y);
+                if (x >= 0 && x < XLength) {
+                    temp.push(this.grid[y][x]);
+                }
+            }
+            if (temp.length > 0) {
+                returnArray.push(temp);
+            }
+        }
+
+        return returnArray;
+    }
+
     private spaceBelongsToCurrentPlayer(val: number) {
         return val === this.currentPlayer;
     }
@@ -115,10 +150,6 @@ export class Connect4 {
 
             return acc;
         }, 0);
-    }
-
-    private checkDiagonalWin() {
-        // TODO
     }
 
     private checkWin(column: number) {

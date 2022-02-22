@@ -112,5 +112,35 @@ describe(Connect4.name, () => {
         ])(testName, ({ game }) => {
             testFunction(game);
         });
+
+        describe('diagonals', () => {
+            const diagonalWin = [
+                { move: 0, returnValue: 'Player 1 has a turn' },
+                { move: 1, returnValue: 'Player 2 has a turn' },
+                { move: 1, returnValue: 'Player 1 has a turn' },
+                { move: 2, returnValue: 'Player 2 has a turn' },
+                { move: 2, returnValue: 'Player 1 has a turn' },
+                { move: 3, returnValue: 'Player 2 has a turn' },
+                { move: 2, returnValue: 'Player 1 has a turn' },
+                { move: 3, returnValue: 'Player 2 has a turn' },
+                { move: 3, returnValue: 'Player 1 has a turn' },
+                { move: 5, returnValue: 'Player 2 has a turn' },
+                { move: 3, returnValue: 'Player 1 wins!' },
+            ];
+
+            it.each([
+                {
+                    test: '4 in a row diagonal win from [0,5] to [3,2]',
+                    game: diagonalWin,
+                },
+                {
+                    test: 'diagonal win, game over',
+                    game: [
+                        ...diagonalWin,
+                        { move: 3, returnValue: 'Game has finished!' },
+                    ],
+                },
+            ])(testName, ({ game }) => testFunction(game));
+        });
     });
 });
