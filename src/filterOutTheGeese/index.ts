@@ -16,15 +16,15 @@ albeit with the 'geese' removed. Note that all of the strings will be in the sam
 and some elements may be repeated.
 */
 
-export function gooseFilter(birds: string[]): string[] {
-    const geese /* : [string] */ = [
-        // Type '[string, string, string, string, string]' is not assignable to type '[string]'. Source has 5 element(s) but target allows only 1.ts(2322)
-        'African',
-        'Roman Tufted',
-        'Toulouse',
-        'Pilgrim',
-        'Steinbacher',
-    ];
+export const GEESE /* : [string] */ = [
+    // Type '[string, string, string, string, string]' is not assignable to type '[string]'. Source has 5 element(s) but target allows only 1.ts(2322)
+    'African',
+    'Roman Tufted',
+    'Toulouse',
+    'Pilgrim',
+    'Steinbacher',
+];
 
-    return birds.filter((bird) => !geese.includes(bird));
+export function gooseFilter(birds: string[]): string[] {
+    return birds.filter((bird) => !GEESE.includes(bird));
 }

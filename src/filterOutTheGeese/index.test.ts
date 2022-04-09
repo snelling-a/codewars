@@ -1,4 +1,4 @@
-import { gooseFilter } from '.';
+import { GEESE, gooseFilter } from '.';
 
 describe('Basic tests', () => {
     it('Mixed list', () =>
@@ -13,30 +13,18 @@ describe('Basic tests', () => {
                 'Blue Swedish',
             ]),
         ).toEqual(['Mallard', 'Hook Bill', 'Crested', 'Blue Swedish']));
-    it('No geese', () =>
-        expect(
-            gooseFilter([
-                'Mallard',
-                'Barbary',
-                'Hook Bill',
-                'Blue Swedish',
-                'Crested',
-            ]),
-        ).toEqual([
+
+    it('No geese', () => {
+        const birds = [
             'Mallard',
             'Barbary',
             'Hook Bill',
             'Blue Swedish',
             'Crested',
-        ]));
-    it('All geese', () =>
-        expect(
-            gooseFilter([
-                'African',
-                'Roman Tufted',
-                'Toulouse',
-                'Pilgrim',
-                'Steinbacher',
-            ]),
-        ).toEqual([]));
+        ];
+
+        expect(gooseFilter(birds)).toEqual(birds);
+    });
+
+    it('All geese', () => expect(gooseFilter(GEESE)).toEqual([]));
 });
