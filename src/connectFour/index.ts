@@ -20,9 +20,7 @@ Rules
 */
 
 export class Connect4 {
-    private grid: (0 | 1 | 2)[][] = new Array(6)
-        .fill(0)
-        .map(() => new Array(7).fill(0));
+    private grid: (0 | 1 | 2)[][];
 
     private currentPlayer: 1 | 2 = 2;
 
@@ -40,7 +38,11 @@ export class Connect4 {
 
     private gameIsFinished = false;
 
-    // constructor() {}
+    constructor(rows = 6, columns = 7) {
+        this.grid = new Array(rows)
+            .fill(0)
+            .map(() => new Array(columns).fill(0));
+    }
 
     play(col: number): string {
         if (this.gameIsFinished) {
@@ -80,13 +82,23 @@ export class Connect4 {
 
         const currentColumnCount = this.count4InARow(currentColumn);
 
-        return currentColumnCount === 4;
+        const win = currentColumnCount === 4;
+        if (win) {
+            console.log('vertical win');
+        }
+
+        return win;
     }
 
     private checkHorizontalWin() {
         const rowWins = this.grid.map((row) => this.count4InARow(row));
 
-        return rowWins.some((rowWin) => rowWin === 4);
+        const win = rowWins.some((rowWin) => rowWin === 4);
+        if (win) {
+            console.log('horizontal win');
+        }
+
+        return win;
     }
 
     private checkDiagonalWin() {
@@ -99,7 +111,12 @@ export class Connect4 {
             this.count4InARow(diagonal),
         );
 
-        return diagonalWins.some((diagonalWin) => diagonalWin === 4);
+        const win = diagonalWins.some((diagonalWin) => diagonalWin === 4);
+        if (win) {
+            console.log('diagonal win');
+        }
+
+        return win;
     }
 
     private getDiagonals(bottomToTop: boolean) {
@@ -130,10 +147,10 @@ export class Connect4 {
 
     private beforeAndAfterBelongToCurrentPlayer(index: number, arr: number[]) {
         const before = arr[index - 1]
-            ? arr[index - 1] === this.currentPlayer
+            ? this.spaceBelongsToCurrentPlayer(arr[index - 1])
             : true;
         const after = arr[index + 1]
-            ? arr[index + 1] === this.currentPlayer
+            ? this.spaceBelongsToCurrentPlayer(arr[index + 1])
             : true;
 
         return before && after;
