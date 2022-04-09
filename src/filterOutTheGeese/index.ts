@@ -17,12 +17,14 @@ and some elements may be repeated.
 */
 
 export function gooseFilter(birds: string[]): string[] {
-    const geese: [string] = [
+    const geese /* : [string] */ = [
+        // Type '[string, string, string, string, string]' is not assignable to type '[string]'. Source has 5 element(s) but target allows only 1.ts(2322)
         'African',
         'Roman Tufted',
         'Toulouse',
         'Pilgrim',
         'Steinbacher',
     ];
-    // return an array containing all of the strings in the input array except those that match strings in geese
+
+    return birds.filter((bird) => !geese.includes(bird));
 }
