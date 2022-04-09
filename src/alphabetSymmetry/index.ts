@@ -15,5 +15,17 @@ Input will consist of alphabet characters, both uppercase and lowercase. No spac
 */
 
 export function solve(arr: string[]) {
-    // your code here
+    return arr.reduce<number[]>((countPerItem, item) => {
+        const numberInCorrectPosition = item
+            .split('')
+            .reduce((countInItem, letter, index) => {
+                if (letter.toUpperCase().charCodeAt(0) - 65 === index) {
+                    return countInItem + 1;
+                }
+
+                return countInItem;
+            }, 0);
+
+        return [...countPerItem, numberInCorrectPosition];
+    }, []);
 }
