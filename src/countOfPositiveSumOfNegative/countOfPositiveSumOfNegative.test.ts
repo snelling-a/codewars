@@ -13,7 +13,7 @@ describe(countPositivesSumNegatives.name, () => {
         [null, []],
         [[], []],
     ])(
-        'should take %s and find the number of positive numbers and sum of negative numbers: %s',
+        'should take %j and find the number of positive numbers and sum of negative numbers: %j',
         (input, output) =>
             expect(countPositivesSumNegatives(input)).toEqual(output),
     );

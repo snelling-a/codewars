@@ -46,7 +46,7 @@ describe(isValidWalk.name, () => {
     ].map((p) => [p, true]);
 
     it.each([...testCases, ...failingTestCases, ...passingTestCases])(
-        'should take directions "%s" and return "%s"',
+        'should take directions "%j" and return "%s"',
         (directions, isValid) => expect(isValidWalk(directions)).toBe(isValid),
     );
 });

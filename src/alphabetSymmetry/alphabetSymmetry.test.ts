@@ -19,7 +19,7 @@ describe('Alphabet Symmetry', () => {
                 ['encode', 'abc', 'xyzD', 'ABmD'],
                 [1, 3, 1, 3],
             ],
-        ])('Testing for %j should result in %j', (arr, expected) =>
+        ])('Testing for %o should result in %o', (arr, expected) =>
             expect(solve(arr)).toEqual(expected),
         );
     });

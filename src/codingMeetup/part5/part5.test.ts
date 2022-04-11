@@ -95,7 +95,7 @@ describe(countLanguages.name, () => {
     ];
 
     it.each([testCase1, testCaseFullList, testCaseNull])(
-        'should count the languages %s, %s',
+        'should count the languages %o, languages: %j',
         (developers, languageCount) => {
             expect(countLanguages(developers)).toEqual(languageCount);
         },

@@ -33,7 +33,7 @@ describe(sumOfIntervals.name, () => {
             ],
             11,
         ],
-    ])('should take intervals %j and return %d', (intervals, expected) =>
+    ])('should take intervals %o and return %d', (intervals, expected) =>
         expect(sumOfIntervals(intervals)).toEqual(expected),
     );
 });

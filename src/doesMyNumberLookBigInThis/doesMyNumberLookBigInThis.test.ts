@@ -48,7 +48,7 @@ describe(narcissistic.name, () => {
     ];
 
     it.each([...basicTests, ...randomTests, ...additionalTests])(
-        '%s',
+        '%o',
         ({ number, isNarcissistic }) => {
             expect(narcissistic(number)).toBe(isNarcissistic);
         },

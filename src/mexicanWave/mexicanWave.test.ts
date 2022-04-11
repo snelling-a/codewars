@@ -33,7 +33,7 @@ describe(wave.name, () => {
             ['', []],
             [' gap ', [' Gap ', ' gAp ', ' gaP ']],
         ])(
-            'should take the string "%s" and return a wave: %s',
+            'should take the string "%s" and return a wave: %j',
             (input, output) => expect(wave(input)).toStrictEqual(output),
         );
     });

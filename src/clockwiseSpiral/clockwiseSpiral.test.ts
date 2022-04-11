@@ -141,14 +141,14 @@ describe(createSpiral.name, () => {
                     ],
                 ],
             ],
-        ])('should take %d and return spiral %s', (N, expected) =>
+        ])('should take %d and return spiral %o', (N, expected) =>
             expect(createSpiral(N)).toEqual(expected),
         );
     });
 
     describe('non integer or zero', () => {
         it.each([0, '2', '4.5', 4.5])(
-            'should return empty array given %s',
+            'should return empty array given %d',
             (N) => expect(createSpiral(N)).toEqual([]),
         );
     });

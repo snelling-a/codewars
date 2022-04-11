@@ -650,7 +650,7 @@ describe(oddOrEven.name, () => {
         ...randomEvenTests,
         ...randomOddTests,
         ...mixedTests,
-    ])('sum of %s should be %s', (testArray, result) => {
+    ])('sum of %j should be %s', (testArray, result) => {
         expect(oddOrEven(testArray)).toEqual(result);
     });
 });

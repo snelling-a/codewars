@@ -1,6 +1,8 @@
 import { checkForFactor } from './grashopperCheckForFactor';
 
 describe(checkForFactor.name, () => {
+    const testName =
+        'should checkForFactor base: %d and factor %d and return %s';
     describe('basic tests', () => {
         it.each([
             [10, 2, true],
@@ -11,10 +13,8 @@ describe(checkForFactor.name, () => {
             [653, 7, false],
             [2453, 5, false],
             [24_617, 3, false],
-        ])(
-            'should checkForFactor base: %d and factor %d and return %s',
-            (base, factor, result) =>
-                expect(checkForFactor(base, factor)).toBe(result),
+        ])(testName, (base, factor, result) =>
+            expect(checkForFactor(base, factor)).toBe(result),
         );
     });
 
@@ -29,10 +29,8 @@ describe(checkForFactor.name, () => {
                 return [base, factor, result];
             });
 
-        it.each(testCases)(
-            'should checkForFactor base: %d and factor %d and return %s',
-            (base, factor, result) =>
-                expect(checkForFactor(base, factor)).toBe(result),
+        it.each(testCases)(testName, (base, factor, result) =>
+            expect(checkForFactor(base, factor)).toBe(result),
         );
     });
 });

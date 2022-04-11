@@ -1,6 +1,8 @@
 import { findOutlier } from './findTheParityOutlier';
 
 describe(findOutlier.name, () => {
+    const testName = 'should take array %s and return outlier %d';
+
     describe('simple tests', () => {
         it.each([
             [[0, 1, 2], 1],
@@ -8,7 +10,7 @@ describe(findOutlier.name, () => {
             [[2, 6, 8, 10, 3], 3],
             [[0, 0, 3, 0, 0], 3],
             [[1, 1, 0, 1, 1], 0],
-        ])('should take array %s and return outlier %d', (integers, expected) =>
+        ])(testName, (integers, expected) =>
             expect(findOutlier(integers)).toEqual(expected),
         );
     });
@@ -37,7 +39,7 @@ describe(findOutlier.name, () => {
             [[1, 1, -1, 1, 1, -44, 7, 7, 7, 7, 7, 7, 7, 7], -44],
             [[1, 0, 0], 1],
             [[3, 7, -99, 81, 90_211, 0, 7], 0],
-        ])('should take array %s and return outlier %d', (integers, expected) =>
+        ])(testName, (integers, expected) =>
             expect(findOutlier(integers)).toEqual(expected),
         );
     });

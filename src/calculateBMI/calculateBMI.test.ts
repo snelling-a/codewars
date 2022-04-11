@@ -104,7 +104,7 @@ describe(bodyMassIndex.name, () => {
         [47.39047900865847, 1.728183330088402, 'Underweight'],
         [60.829339402674506, 1.5528598380931653, 'Overweight'],
     ])(
-        'should return correct BMI for height %s and weight %s; BMI = %s',
+        'should return correct BMI for height %f and weight %f; BMI = %s',
         (weight, height, bmi) => {
             expect(bodyMassIndex(weight, height)).toBe(bmi);
         },
