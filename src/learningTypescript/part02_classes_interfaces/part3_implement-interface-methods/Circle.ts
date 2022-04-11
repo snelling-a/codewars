@@ -1,4 +1,4 @@
-import { IGeometricFigure } from '.';
+import { IGeometricFigure } from './IGeometricFigure';
 
 export class Circle implements IGeometricFigure {
     constructor(readonly radius: number) {}

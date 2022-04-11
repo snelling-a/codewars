@@ -1,4 +1,4 @@
-import { Animal } from '.';
+import { Animal } from './Animal';
 
 export class Boa extends Animal {
     public constructor() {
