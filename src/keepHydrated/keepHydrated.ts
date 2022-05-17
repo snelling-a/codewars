@@ -16,5 +16,5 @@ For example:
 */
 
 export function litres(time: number): number {
-    return 0;
+    return Math.floor(time * 0.5);
 }
