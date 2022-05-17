@@ -1,4 +1,4 @@
-import { Cuboid } from '.';
+import { Cuboid } from './Cuboid';
 
 export class Cube extends Cuboid {
     constructor(length: number) {

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { Serializable } from '.';
+import { Serializable } from './Serializable';
 
 export class Person implements Serializable {
     constructor(public firstName?: string, public lastName?: string) {}

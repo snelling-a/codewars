@@ -1,4 +1,4 @@
-import { IGeometricFigure } from '.';
+import { IGeometricFigure } from './IGeometricFigure';
 
 export class Square implements IGeometricFigure {
     constructor(readonly side: number) {}

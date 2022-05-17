@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { Serializable } from '.';
+
+import { Serializable } from './Serializable';
 
 export class Robot implements Serializable {
     id: string;
